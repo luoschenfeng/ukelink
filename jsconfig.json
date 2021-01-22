@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"],
+        },
+        // "outDir": "dist",
+        // "allowJs": true,
+        // "esModuleInterop": true,
+        // "downlevelIteration": true,
+        // "importHelpers": true,
+        // "declaration": true,
+        // "target": "ESNext",
+        // "lib": ["DOM", "ESNext"],
+    },
+    // "files": [
+    //     "src/unit/index.js"
+    // ],
+}

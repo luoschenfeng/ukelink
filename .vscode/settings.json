@@ -1,0 +1,15 @@
+{
+  // "eslint.enable": false
+
+  // Enables ESLint as a formatter
+  "eslint.format.enable": true,
+  // "javascript.validate.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+
+  "editor.codeActionsOnSaveTimeout": 3000,
+  "search.exclude": {
+    "**/node_modules": false
+  }
+}

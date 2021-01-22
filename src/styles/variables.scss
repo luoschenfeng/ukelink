@@ -1,0 +1,199 @@
+
+// transition
+$fade-linear-transition: opacity 200ms linear !default;
+$md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+
+// font-size 
+$font-size-base: 1.6rem !default;
+
+$font-size-extra-small: 1.2rem !default;
+$font-size-small: 1.3rem !default;
+$font-size-medium: $font-size-base !default;
+$font-size-large: 1.8rem !default;
+$font-size-extra-large: 2rem !default;
+
+
+
+
+// layout 
+$layout-header-height: 7rem;
+$sidebar-width-max: 20rem;
+$sidebar-width-min: 6.5rem;
+
+$assets: '~@/assets';
+$white: #ffffff;
+$width-transition-base: width 0.24s;
+$border-radius-base: 4px !default;
+
+$border-width-base: 1px !default;
+$border-style-base: solid !default;
+
+
+
+
+
+
+
+
+
+
+// background: #0D515B
+// color: #157666
+
+
+// color
+$color-success: #3fa26c !default;
+$color-warning: #e6a23c !default;
+$color-danger: #f56c6c !default;
+$color-info: #6f6c66 !default;
+$color-primary: #157666;
+$text-color-primary: #ffffff;
+
+$background-color-base: #0d515b;
+
+
+// // website font size
+$font-size-base: 3rem;
+$font-size-h1: $font-size-base;
+$font-size-h2: $font-size-base * (1 - 0.2);
+$font-size-h3: $font-size-base * (1 - 0.3);
+$font-size-h4: $font-size-base * (1 - 0.4);
+$font-size-p: $font-size-base * (1 - 0.4);
+$font-size-h5: $font-size-base * (1 - 0.5);
+$font-size-h6: $font-size-base * (1 - 0.6);
+
+// // classics theme
+/* Color 
+*/
+/// color|1|Brand Color|0
+$classics-color-primary: #a37b0d !default;
+/// color|1|Background Color|4
+$classics-color-black: #000000 !default;
+/// color|1|Background Color|4
+$classics-color-white: #3f3b33 !default;
+$classics-color-primary-light-1: mix($classics-color-black, $classics-color-primary, 10%) !default;
+$classics-color-primary-light-2: mix($classics-color-black, $classics-color-primary, 20%) !default;
+$classics-color-primary-light-3: mix($classics-color-black, $classics-color-primary, 30%) !default;
+$classics-color-primary-light-4: mix($classics-color-black, $classics-color-primary, 40%) !default;
+$classics-color-primary-light-5: mix($classics-color-black, $classics-color-primary, 50%) !default;
+$classics-color-primary-light-6: mix($classics-color-black, $classics-color-primary, 60%) !default;
+$classics-color-primary-light-7: mix($classics-color-black, $classics-color-primary, 70%) !default;
+$classics-color-primary-light-8: mix($classics-color-black, $classics-color-primary, 80%) !default;
+$classics-color-primary-light-9: mix($classics-color-black, $classics-color-primary, 90%) !default;
+
+
+$classics-color-black-light-1: mix($classics-color-white, $classics-color-black, 10%) !default;
+$classics-color-black-light-2: mix($classics-color-white, $classics-color-black, 20%) !default;
+$classics-color-black-light-3: mix($classics-color-white, $classics-color-black, 30%) !default;
+$classics-color-black-light-4: mix($classics-color-white, $classics-color-black, 40%) !default;
+$classics-color-black-light-5: mix($classics-color-white, $classics-color-black, 50%) !default;
+$classics-color-black-light-6: mix($classics-color-white, $classics-color-black, 60%) !default;
+$classics-color-black-light-7: mix($classics-color-white, $classics-color-black, 70%) !default;
+$classics-color-black-light-8: mix($classics-color-white, $classics-color-black, 80%) !default;
+$classics-color-black-light-9: mix($classics-color-white, $classics-color-black, 90%) !default;
+
+$classics-color-white-dark-1: mix($classics-color-black, $white, 10%) !default;
+$classics-color-white-dark-2: mix($classics-color-black, $white, 20%) !default;
+$classics-color-white-dark-3: mix($classics-color-black, $white, 30%) !default;
+$classics-color-white-dark-4: mix($classics-color-black, $white, 40%) !default;
+$classics-color-white-dark-5: mix($classics-color-black, $white, 50%) !default;
+$classics-color-white-dark-6: mix($classics-color-black, $white, 60%) !default;
+$classics-color-white-dark-7: mix($classics-color-black, $white, 70%) !default;
+$classics-color-white-dark-8: mix($classics-color-black, $white, 80%) !default;
+$classics-color-white-dark-9: mix($classics-color-black, $white, 90%) !default;
+/// color|1|Functional Color|1
+$classics-color-success: #3fa26c !default;
+/// color|1|Functional Color|1
+$classics-color-warning: #e6a23c !default;
+/// color|1|Functional Color|1
+$classics-color-danger: #f56c6c !default;
+/// color|1|Functional Color|1
+$classics-color-info: #6f6c66 !default;
+
+$classics-color-success-light: mix($classics-color-black, $classics-color-success, 80%) !default;
+$classics-color-warning-light: mix($classics-color-black, $classics-color-warning, 80%) !default;
+$classics-color-danger-light: mix($classics-color-black, $classics-color-danger, 80%) !default;
+$classics-color-info-light: mix($classics-color-black, $classics-color-info, 80%) !default;
+
+$classics-color-success-lighter: mix($classics-color-black, $classics-color-success, 90%) !default;
+$classics-color-warning-lighter: mix($classics-color-black, $classics-color-warning, 90%) !default;
+$classics-color-danger-lighter: mix($classics-color-black, $classics-color-danger, 90%) !default;
+$classics-color-info-lighter: mix($classics-color-black, $classics-color-info, 90%) !default;
+/// color|1|Font Color|2
+$classics-color-text-primary: #cfcecc !default;
+/// color|1|Font Color|2
+$classics-color-text-regular: #9f9d99 !default;
+/// color|1|Font Color|2
+$classics-color-text-secondary: #6f6c66 !default;
+/// color|1|Font Color|2
+$classics-color-text-placeholder: #9f9d99 !default;
+/// color|1|Border Color|3
+$classics-border-color-base: #232019 !default;
+/// color|1|Border Color|3
+$classics-border-color-light: #1b1812 !default;
+/// color|1|Border Color|3
+$classics-border-color-lighter: #14110a !default;
+/// color|1|Border Color|3
+$classics-border-color-extra-light: #0d0903 !default;
+
+// Background
+/// color|1|Background Color|0
+$classics-background-color-base: #0a0805 !default;
+/// color|1|Background Color|1
+$classics-Background-color-light-2: mix($classics-color-white-dark-5, $classics-background-color-base, 20%) !default;
+/// color|1|Background Color|2
+$classics-Background-color-light-3: mix($classics-color-white-dark-5, $classics-background-color-base, 30%) !default;
+/// color|1|Background Color|3
+$classics-Background-color-light-4: mix($classics-color-white-dark-5, $classics-background-color-base, 40%) !default;
+/// color|1|Background Color|4
+$classics-Background-color-light-5: mix($classics-color-white-dark-5, $classics-background-color-base, 50%) !default;
+/// color|1|Background Color|5
+$classics-Background-color-light-6: mix($classics-color-white-dark-5, $classics-background-color-base, 60%) !default;
+// Box-shadow
+/// boxShadow|1|Shadow|1
+$classics-box-shadow-base: 0 2px 4px rgba(255, 255, 255, .12), 0 0 6px rgba(255, 255, 255, .04) !default;
+// boxShadow|1|Shadow|1
+$classics-box-shadow-dark: 0 2px 4px rgba(255, 255, 255, .12), 0 0 6px rgba(255, 255, 255, .12) !default;
+/// boxShadow|1|Shadow|1
+$classics-box-shadow-light: 0 2px 12px 0 rgba(255, 255, 255, 0.1) !default;
+$classics-border-base: $border-width-base $border-style-base $classics-border-color-base !default;
+/*classics color end
+-------------------------- */
+
+
+// sidebar
+/*
+theme classics
+*/
+$classics-menuText: $classics-color-text-primary;
+$classics-menuActiveText: $classics-color-primary;
+$classics-subMenuActiveText: $classics-color-primary-light-1;
+$classics-menuBg: $classics-background-color-base;
+$classics-subMenuBg: $classics-Background-color-light-3;
+$classics-menuHover: $classics-Background-color-light-2;
+$classics-subMenuHover: $classics-Background-color-light-4;
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  menuText: $classics-menuText;
+  menuActiveText: $classics-menuActiveText;
+  subMenuActiveText: $classics-subMenuActiveText;
+  menuBg: $classics-menuBg;
+  menuHover: $classics-menuHover;
+  subMenuBg: $classics-subMenuBg;
+  subMenuHover: $classics-subMenuHover;
+}
+
+// // other 
+$classics-app-bg: $classics-Background-color-light-6;
+$classics-headerBg: $classics-background-color-base;
+$classics-router-view-bc: #333;
+
+// // green theme
+/* green Color 
+*/
+$green-background-color: #93bda4;
+$green-background-image: '#{$assets}/green-bg.png';
+/* green Color end
+*/
