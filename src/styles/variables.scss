@@ -3,7 +3,7 @@
 $fade-linear-transition: opacity 200ms linear !default;
 $md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
 
-// font-size 
+// font-size
 $font-size-base: 1.6rem !default;
 
 $font-size-extra-small: 1.2rem !default;
@@ -12,45 +12,33 @@ $font-size-medium: $font-size-base !default;
 $font-size-large: 1.8rem !default;
 $font-size-extra-large: 2rem !default;
 
-
-
-
-// layout 
+// layout
 $layout-header-height: 7rem;
 $sidebar-width-max: 20rem;
 $sidebar-width-min: 6.5rem;
 
 $assets: '~@/assets';
-$white: #ffffff;
-$width-transition-base: width 0.24s;
+$white: #fff;
 $border-radius-base: 4px !default;
 
 $border-width-base: 1px !default;
 $border-style-base: solid !default;
 
-
-
-
-
-
-
-
-
-
 // background: #0D515B
 // color: #157666
 
+// 2A4A6C
 
+// 06495C
 // color
 $color-success: #3fa26c !default;
 $color-warning: #e6a23c !default;
 $color-danger: #f56c6c !default;
 $color-info: #6f6c66 !default;
 $color-primary: #157666;
-$text-color-primary: #ffffff;
+$text-color-primary: #fff;
 
 $background-color-base: #0d515b;
-
 
 // // website font size
 $font-size-base: 3rem;
@@ -63,12 +51,13 @@ $font-size-h5: $font-size-base * (1 - 0.5);
 $font-size-h6: $font-size-base * (1 - 0.6);
 
 // // classics theme
-/* Color 
+
+/* Color
 */
 /// color|1|Brand Color|0
 $classics-color-primary: #a37b0d !default;
 /// color|1|Background Color|4
-$classics-color-black: #000000 !default;
+$classics-color-black: #000 !default;
 /// color|1|Background Color|4
 $classics-color-white: #3f3b33 !default;
 $classics-color-primary-light-1: mix($classics-color-black, $classics-color-primary, 10%) !default;
@@ -80,7 +69,6 @@ $classics-color-primary-light-6: mix($classics-color-black, $classics-color-prim
 $classics-color-primary-light-7: mix($classics-color-black, $classics-color-primary, 70%) !default;
 $classics-color-primary-light-8: mix($classics-color-black, $classics-color-primary, 80%) !default;
 $classics-color-primary-light-9: mix($classics-color-black, $classics-color-primary, 90%) !default;
-
 
 $classics-color-black-light-1: mix($classics-color-white, $classics-color-black, 10%) !default;
 $classics-color-black-light-2: mix($classics-color-white, $classics-color-black, 20%) !default;
@@ -151,17 +139,18 @@ $classics-Background-color-light-5: mix($classics-color-white-dark-5, $classics-
 $classics-Background-color-light-6: mix($classics-color-white-dark-5, $classics-background-color-base, 60%) !default;
 // Box-shadow
 /// boxShadow|1|Shadow|1
-$classics-box-shadow-base: 0 2px 4px rgba(255, 255, 255, .12), 0 0 6px rgba(255, 255, 255, .04) !default;
+$classics-box-shadow-base: 0 2px 4px rgba(255, 255, 255, 0.12), 0 0 6px rgba(255, 255, 255, 0.04) !default;
 // boxShadow|1|Shadow|1
-$classics-box-shadow-dark: 0 2px 4px rgba(255, 255, 255, .12), 0 0 6px rgba(255, 255, 255, .12) !default;
+$classics-box-shadow-dark: 0 2px 4px rgba(255, 255, 255, 0.12), 0 0 6px rgba(255, 255, 255, 0.12) !default;
 /// boxShadow|1|Shadow|1
 $classics-box-shadow-light: 0 2px 12px 0 rgba(255, 255, 255, 0.1) !default;
 $classics-border-base: $border-width-base $border-style-base $classics-border-color-base !default;
-/*classics color end
+
+/* classics color end
 -------------------------- */
 
-
 // sidebar
+
 /*
 theme classics
 */
@@ -175,25 +164,27 @@ $classics-subMenuHover: $classics-Background-color-light-4;
 
 // the :export directive is the magic sauce for webpack
 // https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
-:export {
-  menuText: $classics-menuText;
-  menuActiveText: $classics-menuActiveText;
-  subMenuActiveText: $classics-subMenuActiveText;
-  menuBg: $classics-menuBg;
-  menuHover: $classics-menuHover;
-  subMenuBg: $classics-subMenuBg;
-  subMenuHover: $classics-subMenuHover;
-}
+// :export {
+//   menutext: $classics-menuText;
+//   menuactivetext: $classics-menuActiveText;
+//   submenuactivetext: $classics-subMenuActiveText;
+//   menubg: $classics-menuBg;
+//   menuhover: $classics-menuHover;
+//   submenubg: $classics-subMenuBg;
+//   submenuhover: $classics-subMenuHover;
+// }
 
-// // other 
+// // other
 $classics-app-bg: $classics-Background-color-light-6;
 $classics-headerBg: $classics-background-color-base;
 $classics-router-view-bc: #333;
 
 // // green theme
-/* green Color 
+
+/* green Color
 */
 $green-background-color: #93bda4;
 $green-background-image: '#{$assets}/green-bg.png';
+
 /* green Color end
 */

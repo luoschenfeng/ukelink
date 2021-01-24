@@ -97,20 +97,28 @@ export default {
   overflow: hidden;
 
   .header-title {
+    width: $sidebar-width-max;
+
     &.header-title__collapse {
       width: $sidebar-width-min;
     }
 
     height: 100%;
     position: absolute;
-    width: $sidebar-width-max;
     text-align: center;
+    // 子元素垂直居中
+
     @include vertical-center;
 
-    .title-link {
+    .title-link,
+    .title-menu {
       display: inline-block;
       vertical-align: middle;
+    }
+
+    .title-link {
       @include hasEvent;
+
       font-size: $font-size-h2;
 
       .icon-vue {
@@ -124,8 +132,6 @@ export default {
     }
 
     .title-menu {
-      display: inline-block;
-      vertical-align: middle;
       margin-left: 1rem;
     }
   }
@@ -135,10 +141,16 @@ export default {
     position: absolute;
     right: 0;
     height: 100%;
+
     @include vertical-center;
-    .header-message {
+
+    .header-message,
+    .header-dropdown-menu {
       display: inline-block;
       vertical-align: middle;
+    }
+
+    .header-message {
       .message_item {
         display: inline-block;
         vertical-align: middle;
@@ -147,10 +159,9 @@ export default {
     }
 
     .header-dropdown-menu {
-      display: inline-block;
-      vertical-align: middle;
       margin: 0 1rem;
-      @include hasEvent
+
+      @include hasEvent;
     }
   }
 }

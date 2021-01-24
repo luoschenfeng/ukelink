@@ -47,11 +47,8 @@
 </template>
 <script>
 import {
-  match,
-} from '@/utils/validate'
-import {
   usernameRegExp,
-  passwordRegExp,  
+  passwordRegExp,
 } from '@/utils/regexp'
 
 export default {
@@ -63,7 +60,7 @@ export default {
       username(rule, val, callback) {
         if (val.length < 3 || val.trim().length > 15) {
           callback(new Error(vm.$t('login.prompt.usernameLength')));
-        } else if (!match(val, usernameRegExp)) {
+        } else if (!usernameRegExp.test(val)) {
           callback(new Error(vm.$t('login.prompt.usernameFormat')));
         } else {
           callback()
@@ -72,7 +69,7 @@ export default {
       password(rule, val, callback) {
         if (val.length < 8 || val.trim().length > 30) {
           callback(new Error(vm.$t('login.prompt.passwordLength')));
-        } else if (!match(val, passwordRegExp)) {
+        } else if (!passwordRegExp.test(val)) {
           callback(new Error(vm.$t('login.prompt.passwordFormat')));
         } else {
           callback()
@@ -128,16 +125,21 @@ export default {
 <style lang="scss" scoped>
 .login-wrapper {
   height: 100%;
+
   .login {
     height: 100%;
     text-align: center;
     background: $background-color-base;
+
     @include vertical-center;
+
     &-form {
       display: inline-block;
       vertical-align: middle;
+
       .form-item-submit::v-deep {
         margin-bottom: 0;
+
         .el-button {
           width: 100%;
         }
