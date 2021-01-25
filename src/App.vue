@@ -7,4 +7,7 @@
 </template>
 
 <style lang="scss">
+#app {
+  background-color: #06495C;
+}
 </style>

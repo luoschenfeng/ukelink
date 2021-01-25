@@ -16,9 +16,9 @@ $--color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !defau
 /* Color
 -------------------------- */
 /// color|1|Brand Color|0
-$--color-primary: #06495c !default;
+$--color-primary: #10d8b7 !default; // change
 /// color|1|Background Color|4
-$--color-white: #2a4a6c !default;
+$--color-white:rgba(6, 73 ,92, 0.9) !default; // change
 /// color|1|Background Color|4
 $--color-black: #000 !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
@@ -31,13 +31,13 @@ $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /
 $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
 $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
 /// color|1|Functional Color|1
-$--color-success: #67c23a !default;
+$--color-success:#43c37d !default;
 /// color|1|Functional Color|1
-$--color-warning: #e6a23c !default;
+$--color-warning: #ad8d4f !default;
 /// color|1|Functional Color|1
-$--color-danger: #f56c6c !default;
+$--color-danger:#f56c6c !default;
 /// color|1|Functional Color|1
-$--color-info: #909399 !default;
+$--color-info: #888e9a !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
@@ -49,25 +49,25 @@ $--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
 $--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
 $--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
 /// color|1|Font Color|2
-$--color-text-primary: #303133 !default;
+$--color-text-primary: #f3f1ed !default; //change
 /// color|1|Font Color|2
-$--color-text-regular: #606266 !default;
+$--color-text-regular: #e6e2da !default; //change
 /// color|1|Font Color|2
-$--color-text-secondary: #909399 !default;
+$--color-text-secondary: #7c878a !default; //change
 /// color|1|Font Color|2
-$--color-text-placeholder: #c0c4cc !default;
+$--color-text-placeholder: #959c9e !default; //change
 /// color|1|Border Color|3
-$--border-color-base: #dcdfe6 !default;
+$--border-color-base: #748096 !default; //change 
 /// color|1|Border Color|3
-$--border-color-light: #e4e7ed !default;
+$--border-color-light: #949eb1 !default; //change 
 /// color|1|Border Color|3
-$--border-color-lighter: #ebeef5 !default;
+$--border-color-lighter: #a1aabb !default; //change 
 /// color|1|Border Color|3
-$--border-color-extra-light: #f2f6fc !default;
+$--border-color-extra-light: rgba(147, 159, 181, 0.9) !default; //change 
 
 // Background
 /// color|1|Background Color|4
-$--background-color-base: #0d515b !default;
+$--background-color-base: rgba(85, 107, 123, 0.9) !default;
 
 /* Link
 -------------------------- */
@@ -91,11 +91,11 @@ $--border-radius-zero: 0 !default;
 
 // Box-shadow
 /// boxShadow|1|Shadow|1
-$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04) !default;
+$--box-shadow-base: 0 2px 4px rgba(6,73,92, 0.12), 0 0 6px rgba(6,73,92, 0.04) !default;
 // boxShadow|1|Shadow|1
-$--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.12) !default;
+$--box-shadow-dark: 0 2px 4px rgba(6,73,92, 0.12), 0 0 6px rgba(6,73,92, 0.12) !default;
 /// boxShadow|1|Shadow|1
-$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
+$--box-shadow-light: 0 2px 12px 0 rgba(6,73,92, 0.1) !default;
 
 /* Fill
 -------------------------- */
@@ -145,7 +145,7 @@ $--disabled-border-base: $--border-color-light !default;
 
 /* Icon
 -------------------------- */
-$--icon-color: #666 !default;
+$--icon-color: $--color-text-regular !default;
 $--icon-color-base: $--color-info !default;
 
 /* Checkbox
@@ -166,7 +166,7 @@ $--checkbox-input-border: $--border-base !default;
 
 /// color||Color|0
 $--checkbox-disabled-border-color: $--border-color-base !default;
-$--checkbox-disabled-input-fill: #edf2fc !default;
+$--checkbox-disabled-input-fill: rgba(85, 107, 123, 0.9) !default;
 $--checkbox-disabled-icon-color: $--color-text-placeholder !default;
 
 $--checkbox-disabled-checked-input-fill: $--border-color-extra-light !default;
@@ -284,7 +284,7 @@ $--select-font-size: $--font-size-base !default;
 $--select-close-hover-color: $--color-text-secondary !default;
 
 $--select-input-color: $--color-text-placeholder !default;
-$--select-multiple-input-color: #666 !default;
+$--select-multiple-input-color: $--color-text-regular !default;
 /// color||Color|0
 $--select-input-focus-border-color: $--color-primary !default;
 /// fontSize||Font|1
@@ -365,7 +365,7 @@ $--messagebox-danger-color: $--color-danger !default;
 -------------------------- */
 $--message-shadow: $--box-shadow-base !default;
 $--message-min-width: 380px !default;
-$--message-background-color: #edf2fc !default;
+$--message-background-color: rgba(137, 142, 154, 0.3) !default;
 $--message-padding: 15px 15px 15px 20px !default;
 /// color||Color|0
 $--message-close-icon-color: $--color-text-placeholder !default;
@@ -613,7 +613,7 @@ $--switch-button-size: 16px !default;
 /* Dialog
 -------------------------- */
 $--dialog-background-color: $--color-white !default;
-$--dialog-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !default;
+$--dialog-box-shadow: 0 1px 3px rgba(6,73,92, 0.12) !default;
 /// fontSize||Font|1
 $--dialog-title-font-size: $--font-size-large !default;
 /// fontSize||Font|1
@@ -637,7 +637,7 @@ $--table-row-hover-background-color: $--background-color-base !default;
 $--table-current-row-background-color: $--color-primary-light-9 !default;
 /// color||Color|0
 $--table-header-background-color: $--color-white !default;
-$--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12) !default;
+$--table-fixed-box-shadow: 0 0 10px rgba(6,73,92, 0.12) !default;
 
 /* Pagination
 -------------------------- */
@@ -814,7 +814,7 @@ $--datepicker-inrange-hover-background-color: $--border-color-extra-light !defau
 $--datepicker-active-color: $--color-primary !default;
 /// color||Color|0
 $--datepicker-hover-font-color: $--color-primary !default;
-$--datepicker-cell-hover-color: #fff !default;
+$--datepicker-cell-hover-color: rgba(255, 255, 255, 0) !default;
 
 /* Loading
 -------------------------- */
@@ -833,8 +833,8 @@ $--scrollbar-hover-background-color: rgba($--color-text-secondary, 0.5) !default
 /// fontSize||Font|1
 $--carousel-arrow-font-size: 12px !default;
 $--carousel-arrow-size: 36px !default;
-$--carousel-arrow-background: rgba(31, 45, 61, 0.11) !default;
-$--carousel-arrow-hover-background: rgba(31, 45, 61, 0.23) !default;
+$--carousel-arrow-background: rgba(224, 210, 189, 0.11) !default;
+$--carousel-arrow-hover-background: rgba(224, 210, 189, 0.23) !default;
 /// width||Other|4
 $--carousel-indicator-width: 30px !default;
 /// height||Other|4
