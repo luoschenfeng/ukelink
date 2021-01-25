@@ -18,9 +18,29 @@ $--color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !defau
 /// color|1|Brand Color|0
 $--color-primary: #10d8b7 !default; // change
 /// color|1|Background Color|4
-$--color-white:rgba(6, 73 ,92, 0.9) !default; // change
+$--color-white:rgba(6, 73, 92, 0.9) !default; // change
 /// color|1|Background Color|4
 $--color-black: #000 !default;
+/// color|1|Font Color|2
+$--color-text-primary: #f3f1ed !default; //change
+/// color|1|Font Color|2
+$--color-text-regular: #e6e2da !default; //change
+/// color|1|Font Color|2
+$--color-text-secondary: #a6acad !default; //change
+/// color|1|Font Color|2
+$--color-text-placeholder: #537186 !default; //change
+
+/// color|1|Border Color|3
+$--border-color-light: #949eb1 !default; //change
+/// color|1|Border Color|3
+$--border-color-lighter: #a1aabb !default; //change
+/// color|1|Border Color|3
+$--border-color-extra-light: rgba(100, 138, 149, 0.9) !default; //change
+
+// Background
+/// color|1|Background Color|4
+$--background-color-base: rgba(105, 126, 141, 0.4) !default;
+
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
 $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
@@ -33,41 +53,21 @@ $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /
 /// color|1|Functional Color|1
 $--color-success:#43c37d !default;
 /// color|1|Functional Color|1
-$--color-warning: #ad8d4f !default;
+$--color-warning: #c0984a !default;
 /// color|1|Functional Color|1
-$--color-danger:#f56c6c !default;
+$--color-danger:#ca5c5c !default;
 /// color|1|Functional Color|1
-$--color-info: #888e9a !default;
+$--color-info: #b8bdc6 !default;
 
-$--color-success-light: mix($--color-white, $--color-success, 80%) !default;
-$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
-$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
-$--color-info-light: mix($--color-white, $--color-info, 80%) !default;
+$--color-success-light: mix($--color-text-primary, $--color-success, 80%) !default;
+$--color-warning-light: mix($--color-text-primary, $--color-warning, 80%) !default;
+$--color-danger-light: mix($--color-text-primary, $--color-danger, 80%) !default;
+$--color-info-light: mix($--color-text-primary, $--color-info, 80%) !default;
 
-$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
-$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
-$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
-$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
-/// color|1|Font Color|2
-$--color-text-primary: #f3f1ed !default; //change
-/// color|1|Font Color|2
-$--color-text-regular: #e6e2da !default; //change
-/// color|1|Font Color|2
-$--color-text-secondary: #7c878a !default; //change
-/// color|1|Font Color|2
-$--color-text-placeholder: #959c9e !default; //change
-/// color|1|Border Color|3
-$--border-color-base: #748096 !default; //change 
-/// color|1|Border Color|3
-$--border-color-light: #949eb1 !default; //change 
-/// color|1|Border Color|3
-$--border-color-lighter: #a1aabb !default; //change 
-/// color|1|Border Color|3
-$--border-color-extra-light: rgba(147, 159, 181, 0.9) !default; //change 
-
-// Background
-/// color|1|Background Color|4
-$--background-color-base: rgba(85, 107, 123, 0.9) !default;
+$--color-success-lighter: mix($--color-text-primary, $--color-success, 90%) !default;
+$--color-warning-lighter: mix($--color-text-primary, $--color-warning, 90%) !default;
+$--color-danger-lighter: mix($--color-text-primary, $--color-danger, 90%) !default;
+$--color-info-lighter: mix($--color-text-primary, $--color-info, 90%) !default;
 
 /* Link
 -------------------------- */
@@ -78,6 +78,8 @@ $--link-hover-color: $--color-primary !default;
 -------------------------- */
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
+/// color|1|Border Color|3
+$--border-color-base: #afb7c5 !default; //change
 $--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 /// borderRadius|1|Radius|0
@@ -91,11 +93,11 @@ $--border-radius-zero: 0 !default;
 
 // Box-shadow
 /// boxShadow|1|Shadow|1
-$--box-shadow-base: 0 2px 4px rgba(6,73,92, 0.12), 0 0 6px rgba(6,73,92, 0.04) !default;
+$--box-shadow-base: 0 2px 4px rgba(6, 73, 92, 0.12), 0 0 6px rgba(6, 73, 92, 0.04) !default;
 // boxShadow|1|Shadow|1
-$--box-shadow-dark: 0 2px 4px rgba(6,73,92, 0.12), 0 0 6px rgba(6,73,92, 0.12) !default;
+$--box-shadow-dark: 0 2px 4px rgba(6, 73, 92, 0.12), 0 0 6px rgba(6, 73, 92, 0.12) !default;
 /// boxShadow|1|Shadow|1
-$--box-shadow-light: 0 2px 12px 0 rgba(6,73,92, 0.1) !default;
+$--box-shadow-light: 0 2px 12px 0 rgba(6, 73, 92, 0.1) !default;
 
 /* Fill
 -------------------------- */
@@ -207,7 +209,7 @@ $--checkbox-bordered-mini-height: 28px !default;
 /// color||Color|0
 $--checkbox-button-checked-background-color: $--color-primary !default;
 /// color||Color|0
-$--checkbox-button-checked-font-color: $--color-white !default;
+$--checkbox-button-checked-font-color: $--color-text-primary !default;
 /// color||Color|0
 $--checkbox-button-checked-border-color: $--color-primary !default;
 
@@ -229,7 +231,7 @@ $--radio-input-border: $--border-base !default;
 /// color||Color|0
 $--radio-input-border-color: $--border-color-base !default;
 /// color||Color|0
-$--radio-icon-color: $--color-white !default;
+$--radio-icon-color: $--color-text-primary !default;
 
 $--radio-disabled-input-border-color: $--disabled-border-base !default;
 $--radio-disabled-input-fill: $--disabled-fill-base !default;
@@ -270,7 +272,7 @@ $--radio-button-font-size: $--font-size-base !default;
 /// color||Color|0
 $--radio-button-checked-background-color: $--color-primary !default;
 /// color||Color|0
-$--radio-button-checked-font-color: $--color-white !default;
+$--radio-button-checked-font-color: $--color-text-primary !default;
 /// color||Color|0
 $--radio-button-checked-border-color: $--color-primary !default;
 $--radio-button-disabled-checked-fill: $--border-color-extra-light !default;
@@ -368,11 +370,11 @@ $--message-min-width: 380px !default;
 $--message-background-color: rgba(137, 142, 154, 0.3) !default;
 $--message-padding: 15px 15px 15px 20px !default;
 /// color||Color|0
-$--message-close-icon-color: $--color-text-placeholder !default;
+$--message-close-icon-color: $--color-info !default;
 /// height||Other|4
 $--message-close-size: 16px !default;
 /// color||Color|0
-$--message-close-hover-color: $--color-text-secondary !default;
+$--message-close-hover-color: $--color-primary !default;
 
 /// color||Color|0
 $--message-success-font-color: $--color-success !default;
@@ -502,7 +504,7 @@ $--tab-header-color: $--color-text-regular !default;
 $--tab-header-fill-active: rgba($--color-black, 0.06) !default;
 $--tab-header-fill-hover: rgba($--color-black, 0.06) !default;
 $--tab-vertical-header-width: 90px !default;
-$--tab-vertical-header-count-color: $--color-white !default;
+$--tab-vertical-header-count-color: $--color-text-primary !default;
 $--tab-vertical-header-count-fill: $--color-text-secondary !default;
 
 /* Button
@@ -559,31 +561,31 @@ $--button-disabled-border-color: $--border-color-lighter !default;
 /// color||Color|0
 $--button-primary-border-color: $--color-primary !default;
 /// color||Color|0
-$--button-primary-font-color: $--color-white !default;
+$--button-primary-font-color: $--color-text-primary !default;
 /// color||Color|0
 $--button-primary-background-color: $--color-primary !default;
 /// color||Color|0
 $--button-success-border-color: $--color-success !default;
 /// color||Color|0
-$--button-success-font-color: $--color-white !default;
+$--button-success-font-color: $--color-text-primary !default;
 /// color||Color|0
 $--button-success-background-color: $--color-success !default;
 /// color||Color|0
 $--button-warning-border-color: $--color-warning !default;
 /// color||Color|0
-$--button-warning-font-color: $--color-white !default;
+$--button-warning-font-color: $--color-text-primary !default;
 /// color||Color|0
 $--button-warning-background-color: $--color-warning !default;
 /// color||Color|0
 $--button-danger-border-color: $--color-danger !default;
 /// color||Color|0
-$--button-danger-font-color: $--color-white !default;
+$--button-danger-font-color: $--color-text-primary !default;
 /// color||Color|0
 $--button-danger-background-color: $--color-danger !default;
 /// color||Color|0
 $--button-info-border-color: $--color-info !default;
 /// color||Color|0
-$--button-info-font-color: $--color-white !default;
+$--button-info-font-color: $--color-text-primary !default;
 /// color||Color|0
 $--button-info-background-color: $--color-info !default;
 
@@ -613,7 +615,7 @@ $--switch-button-size: 16px !default;
 /* Dialog
 -------------------------- */
 $--dialog-background-color: $--color-white !default;
-$--dialog-box-shadow: 0 1px 3px rgba(6,73,92, 0.12) !default;
+$--dialog-box-shadow: 0 1px 3px rgba(6, 73, 92, 0.12) !default;
 /// fontSize||Font|1
 $--dialog-title-font-size: $--font-size-large !default;
 /// fontSize||Font|1
@@ -637,7 +639,7 @@ $--table-row-hover-background-color: $--background-color-base !default;
 $--table-current-row-background-color: $--color-primary-light-9 !default;
 /// color||Color|0
 $--table-header-background-color: $--color-white !default;
-$--table-fixed-box-shadow: 0 0 10px rgba(6,73,92, 0.12) !default;
+$--table-fixed-box-shadow: 0 0 10px rgba(6, 73, 92, 0.12) !default;
 
 /* Pagination
 -------------------------- */
@@ -690,7 +692,7 @@ $--popover-title-font-color: $--color-text-primary !default;
 /// color|1|Color|0
 $--tooltip-fill: $--color-text-primary !default;
 /// color|1|Color|0
-$--tooltip-color: $--color-white !default;
+$--tooltip-color: $--color-text-primary !default;
 /// fontSize||Font|1
 $--tooltip-font-size: 12px !default;
 /// color||Color|0

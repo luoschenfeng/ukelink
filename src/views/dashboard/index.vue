@@ -1,57 +1,23 @@
 <template>
   <div>
-    <echart-card :card-title="$t('dashboard.echart.barChartTitle')">
-      <BarChart
-        :chart-data="sexStatisticMonthly"
-        class-name="chart"
-      />
-    </echart-card>
+    $--color-text-placeholder
+    <el-input
+      v-model="input1"
+      placeholder="请输入内容"
+    />
   </div>
 </template>
 
 <script>
-import {
-  getPVBySexStatistics,
-} from '@/api/dashboard'
 
-import BarChart from './components/BarChart'
-
-import EchartCard from '@/components/EchartCard'
 export default {
   name: 'Dashboard',
 
-  components: {
-    BarChart,
-
-    EchartCard,
-  },
+  components: {},
   data() {
-
     return {
-      requestParams: {},
-      sexStatisticMonthly: [],
+      input1: '',
     }
-  },
-  mounted() {
-    this.init()
-  },
-  methods: {
-    init() {
-      this.randerSexStatisticLineChart()
-    },
-    randerSexStatisticLineChart() {
-      this.loading = true
-      const params = this.requestParams
-
-      getPVBySexStatistics(params)
-        .then(data => {
-          this.sexStatisticMonthly = data
-        })
-        .catch(err => {
-          this.loading = false
-          throw new Error(err)
-        })
-    },
   },
 }
 </script>
