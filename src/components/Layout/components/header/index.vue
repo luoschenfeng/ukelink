@@ -1,24 +1,24 @@
 <template>
   <div class="header">
     <div
-      :collapse="sidebarCollapse"
       :class="[sidebarCollapse ? 'header-title__collapse' : '', 'header-title']"
     >
-      <router-link
-        v-if="!sidebarCollapse"
-        class="title-link"
-        to="/"
-        tag="h2"
-      >
-        <svg-icon icon-name="vue" />
-        <span class="title-link__h2">ukelink</span>
-      </router-link>
       <div class="title-menu">
         <svg-icon
           icon-name="menu"
           @click="handleToggleSidebar"
         />
       </div>
+      <router-link
+        class="title-link"
+        to="/"
+        tag="h2"
+      >
+        <svg-icon icon-name="vue" />
+        <h1 class="title-link__h1">
+          ukelink
+        </h1>
+      </router-link>
     </div>
     <div class="header-operate">
       <div class="header-message">
@@ -61,8 +61,6 @@ export default {
   name: 'LayoutHeader',
   data: function () {
     return {
-      showInput: false,
-      searchValue: '',
       avatar: {
         size: 'medium',
         url: 'https://cdn.pixabay.com/photo/2017/03/05/23/14/girl-2120196_960_720.jpg',
@@ -74,15 +72,12 @@ export default {
       get() {
         return this.$store.getters['sidebarCollapse']
       },
-      set(sidebarCollapse) {
-        this.$store.dispatch('settings/setSidebarCollapse', sidebarCollapse)
+      set(status) {
+        this.$store.dispatch('settings/setSidebarCollapse', status)
       },
     },
   },
   methods: {
-    handleClick() {
-      this.showInput = !this.showInput
-    },
     handleToggleSidebar() {
       this.sidebarCollapse = !this.sidebarCollapse
     },
@@ -91,69 +86,67 @@ export default {
 </script>
 <style lang="scss" scoped>
 .header {
-  background: $background-color-base;
-  color: $text-color-primary;
-  width: 100%;
-  overflow: hidden;
+  @include genThemeStyle('background', $background-color-base);
+  @include genThemeStyle('color', $color-text-primary);
+  @include vertical-center;
 
   .header-title {
+    display: inline-block;
+    vertical-align: middle;
     width: $sidebar-width-max;
-
-    &.header-title__collapse {
-      width: $sidebar-width-min;
-    }
-
+    overflow: hidden;
     height: 100%;
-    position: absolute;
-    text-align: center;
-    // 子元素垂直居中
 
     @include vertical-center;
-
-    .title-link,
+    // height: 100%;
+    // position: absolute;
+    // 子元素垂直居中
     .title-menu {
       display: inline-block;
       vertical-align: middle;
+      width: $sidebar-width-min;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      box-sizing: border-box;
     }
 
     .title-link {
-      @include hasEvent;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: $font-size-large;
+      text-align: center;
 
-      font-size: $font-size-h2;
+      @include hasEvent;
 
       .icon-vue {
         vertical-align: middle;
       }
 
-      .title-link__h2 {
-        vertical-align: middle;
+      .title-link__h1 {
+        font-size: $font-size-large;
         padding-left: 1rem;
+        display: inline-block;
       }
-    }
-
-    .title-menu {
-      margin-left: 1rem;
     }
   }
 
   .header-operate {
+    display: inline-block;
+    vertical-align: middle;
     padding: 0 1rem;
-    position: absolute;
-    right: 0;
-    height: 100%;
-
-    @include vertical-center;
-
+    // position: absolute;
+    // right: 0;
+    // height: 100%;
     .header-message,
     .header-dropdown-menu {
-      display: inline-block;
-      vertical-align: middle;
+      // display: inline-block;
+      // vertical-align: middle;
     }
 
     .header-message {
       .message_item {
-        display: inline-block;
-        vertical-align: middle;
+        // display: inline-block;
+        // vertical-align: middle;
         margin: 0 1rem;
       }
     }

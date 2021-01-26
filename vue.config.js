@@ -45,7 +45,10 @@ module.exports = {
         .options({
 
           // Or array of paths
-          resources: [ './src/styles/index.scss' ],
+          resources: [
+            './src/styles/common/variables/index.scss',
+            './src/styles/common/mixins/utils.scss', 
+          ],
         })
         .end()
     })

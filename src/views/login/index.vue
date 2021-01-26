@@ -129,15 +129,15 @@ export default {
   .login {
     height: 100%;
     text-align: center;
-    background: $background-color-base;
 
+    @include genThemeStyle('background', $background-color-base);
     @include vertical-center;
 
     &-form {
       display: inline-block;
       vertical-align: middle;
 
-      .form-item-submit::v-deep {
+      >>> .form-item-submit {
         margin-bottom: 0;
 
         .el-button {

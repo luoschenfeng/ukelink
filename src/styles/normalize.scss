@@ -1,0 +1,58 @@
+@import "./common/variables/index.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family:
+    Helvetica Neue,
+    Helvetica,
+    PingFang SC,
+    Hiragino Sans GB,
+    Microsoft YaHei,
+    Arial,
+    sans-serif;
+}
+
+@include genThemeStyle('color', $color-text-regular);
+
+#app {
+  height: 100%;
+  font-size: $font-size-base;
+
+  @include scroll-bar;
+  //   background-color: $classics-app-bg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+em {
+  @include genThemeStyle('color', $color-text-primary);
+}
+
+.svg-icon {
+  width: $font-size-base;
+  height: $font-size-base;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+
+  @include hasEvent;
+}

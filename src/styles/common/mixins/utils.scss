@@ -1,0 +1,78 @@
+@import '../variables/index.scss';
+
+@mixin vertical-center {
+  $selector: &;
+
+  @at-root {
+    #{$selector}::after {
+      display: inline-block;
+      content: '';
+      height: 100%;
+      vertical-align: middle;
+    }
+  }
+}
+
+@mixin genThemeStyle($property, $colorObject) {
+  @each $theme in $themeList {
+    @debug &;
+    #{if(&, '.#{$theme} &', 'body.#{$theme}')} {
+      #{$property}: map-get($colorObject, #{$theme});
+    }
+  }
+}
+
+/* Scrollbar
+ -------------------------- */
+@mixin scroll-bar {
+  &::-webkit-scrollbar {
+    /* stylelint-disable-line */
+    height: 6px;
+    z-index: 11;
+    width: 6px;
+    &:horizontal {/* stylelint-disable-line */
+      height: 6px;
+    }
+
+    &-thumb {/* stylelint-disable-line */
+      border-radius: 5px;
+      width: 6px;
+
+      @include genThemeStyle('background', $color-primary);
+    }
+
+    &-corner {/* stylelint-disable-line */
+      @include genThemeStyle('background', $background-color-base);
+    }
+
+    &-track {/* stylelint-disable-line */
+      @include genThemeStyle('background', $background-color-base);
+
+      &-piece { /* stylelint-disable-line */
+        width: 6px;
+
+        @include genThemeStyle('background', $background-color-base);
+      }
+    }
+  }
+}
+
+/* Placeholder
+ -------------------------- */
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin hasEvent {
+  cursor: pointer;
+}

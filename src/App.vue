@@ -1,6 +1,7 @@
 <template>
   <div
     id="app"
+    class="blue"
   >
     <router-view />
   </div>
@@ -8,6 +9,6 @@
 
 <style lang="scss">
 #app {
-  background-color: #06495C;
+  background-color: #06495c;
 }
 </style>

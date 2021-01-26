@@ -1,8 +1,8 @@
 const et = require('element-themex')
 
 et.run({
-  config: './src/styles/theme/element-variables.scss',
-  out: './src/assets/theme/blue',
+  config: './src/styles/archives/blue-element-variables.scss',
+  out: './src/assets/theme/style/blue',
   minimize: true,
 })
 

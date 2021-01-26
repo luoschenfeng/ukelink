@@ -1,5 +1,4 @@
-@import '~@/styles/variables.scss';
-@import '~@/styles/mixins/utils.scss';
-@import '~@/styles/transition.scss';
-@import '~@/styles/views/sidebar.scss';
-@import "~@/styles/element-ui.scss";
+@import "./transition.scss";
+@import "./element-ui.scss";
+@import "./normalize.scss";
+@import "./views/sidebar.scss";

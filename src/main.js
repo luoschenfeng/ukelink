@@ -8,7 +8,6 @@ import {
 // a modern alternative to CSS resets
 import 'normalize.css/normalize.css'
 import '@/styles/index.scss';
-import '@/styles/views/common.scss';
 
 import router from '@/router'
 import '@/router/permission'

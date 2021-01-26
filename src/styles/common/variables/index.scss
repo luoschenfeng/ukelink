@@ -1,0 +1,27 @@
+
+@import "./theme/index.scss";
+
+// layout
+$layout-header-height: 7rem;
+$sidebar-width-max: 20rem;
+$sidebar-width-min: 6.5rem;
+
+// font-size
+$font-size-base: 1.6rem !default;
+
+$font-size-extra-small: 1.2rem !default;
+$font-size-small: 1.3rem !default;
+$font-size-medium: $font-size-base !default;
+$font-size-large: 1.8rem !default;
+$font-size-extra-large: 2rem !default;
+
+// copy from element
+$border-radius-base: 4px !default;
+$border-width-base: 1px !default;
+$border-style-base: solid !default;
+
+// copy from element
+$all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !default;
+$fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;
+$fade-linear-transition: opacity 200ms linear !default;
+$md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1) !default;

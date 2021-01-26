@@ -1,4 +1,5 @@
-// copy from element-ui
+@import './common/variables/index.scss';
+
 .fade-in-linear-enter-active,
 .fade-in-linear-leave-active {
   transition: $fade-linear-transition;

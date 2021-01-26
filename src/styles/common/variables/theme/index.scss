@@ -1,0 +1,17 @@
+@use './blue.scss' as blue-theme;
+
+$themeList: 'blue', 'yellow';
+
+$color-primary: ("blue": blue-theme.$color-primary,);
+
+$color-text-primary: ("blue": blue-theme.$color-text-primary);
+
+$color-text-regular: ("blue": blue-theme.$color-text-regular);
+
+$color-text-secondary: ("blue": blue-theme.$color-text-secondary);
+
+$color-text-placeholder: ("blue": blue-theme.$color-text-placeholder);
+
+$background-image-app: ("blue": "~@/assets/theme/images/blue/background-image-app",);
+
+$background-color-base: ("blue": blue-theme.$background-color-base,);
