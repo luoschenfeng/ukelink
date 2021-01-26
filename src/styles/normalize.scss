@@ -29,6 +29,7 @@ body {
 
   @include genThemeStyle('color', $color-text-regular, true);
   @include genThemeStyle('background', $background-color-dark, true);
+  @include scroll-bar;
 }
 
 #app {
