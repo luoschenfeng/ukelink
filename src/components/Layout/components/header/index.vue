@@ -86,7 +86,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .header {
-  @include genThemeStyle('background', $background-color-base);
+  @include genThemeStyle('background', $background-color-darker);
   @include genThemeStyle('color', $color-text-primary);
   @include vertical-center;
 
@@ -98,9 +98,7 @@ export default {
     height: 100%;
 
     @include vertical-center;
-    // height: 100%;
-    // position: absolute;
-    // 子元素垂直居中
+
     .title-menu {
       display: inline-block;
       vertical-align: middle;
