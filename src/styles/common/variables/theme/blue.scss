@@ -1,8 +1,10 @@
 @import "./../../../archives/element-variables-blue.scss";
 
-$color-primary: $--color-primary;
-$background-color-base: $--background-color-base;
-$color-text-primary: $--color-text-primary;
-$color-text-regular: $--color-text-regular;
-$color-text-secondary: $--color-text-secondary;
-$color-text-placeholder: $--color-text-placeholder;
+$color-primary: $--color-primary !default;
+$background-color-base: $--background-color-base !default;
+$background-color-dark: #06495c !default;
+$background-color-darker: mix(#000, $background-color-dark, 20%) !default;
+$color-text-primary: $--color-text-primary !default;
+$color-text-regular: $--color-text-regular !default;
+$color-text-secondary: $--color-text-secondary !default;
+$color-text-placeholder: $--color-text-placeholder !default;

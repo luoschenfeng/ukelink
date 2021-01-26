@@ -6,7 +6,7 @@
     </router-link>
     <el-table
       :data="tableData"
-      style="width: 100%"
+      style="width: 100%;"
     >
       <el-table-column
         prop="date"
@@ -26,7 +26,7 @@
     <el-pagination
       layout="prev, pager, next"
       :total="1000"
-      style="text-align: center"
+      style="text-align: center;"
     />
 
     <el-button

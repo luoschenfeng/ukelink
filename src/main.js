@@ -5,8 +5,6 @@ import {
   i18n,
 } from '@/lang'
 
-// a modern alternative to CSS resets
-import 'normalize.css/normalize.css'
 import '@/styles/index.scss';
 
 import router from '@/router'
