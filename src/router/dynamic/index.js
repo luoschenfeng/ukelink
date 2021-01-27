@@ -1,2 +1,2 @@
-import router from './router'
-export default [ router ]
+import contentExample from './content-example'
+export default [ contentExample ]

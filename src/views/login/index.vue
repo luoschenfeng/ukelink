@@ -1,6 +1,6 @@
 <template>
-  <div class="login-wrapper">
-    <div class="login">
+  <div class="login">
+    <div class="login-wrapper">
       <el-form
         ref="loginForm"
         class="login-form"
@@ -123,10 +123,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.login-wrapper {
+.login {
   height: 100%;
 
-  .login {
+  .login-wrapper {
     height: 100%;
     text-align: center;
 

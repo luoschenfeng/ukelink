@@ -83,38 +83,38 @@ export interface PathToRegexpOptions {
 
 interface IMeta {
   /**
-   * @description 权限（不指定则默认加入到侧边栏）
+   *  权限（不指定则默认加入到侧边栏）
    */
   roles?: Array<number | string>
   /**
-   * @description 标题 （侧边栏等标题）,并且决定了是否显示在侧边栏
+   *  标题 （侧边栏等标题）,并且决定了是否显示在侧边栏
    */
   title?: string
   /**
-   * @description icon （侧边栏等icon）
+   *  icon （侧边栏等icon）
    */
   icon: string
   /**
-   * @description 是否在组件上启用keep-alive
+   *  是否在组件上启用keep-alive
    * @default true （默认为true，启用）
    */
   cache?: boolean
   /**
-   * @description 是否在侧边栏显示
+   *  是否在侧边栏显示
    * @default true （默认显示）
    */
   sidebarShow?: boolean
   /**
-   * @description 要激活的侧边栏栏目(接受与redirect同样的参数)
+   *  要激活的侧边栏栏目(接受与redirect同样的参数)
    */
   sidebarActive?: RedirectOption
   /**
-   * @description 是否在面包屑显示
+   *  是否在面包屑显示
    * @default true （默认显示）
    */
   breadcrumbShow?: boolean
   /**
-   * @description 在面包屑中渲染的标签
+   *  在面包屑中渲染的标签
    * @default true (true渲染为‘a’,false渲染为span,且不能点击)
    */
   breadcrumbiSTag?: number | string | boolean
@@ -123,31 +123,31 @@ interface IMeta {
 
 interface _RouteConfigBase {
   /**
-   * @description 路由路径
+   * 路由路径
    */
   path: string
   /**
-   * @description 路由名称
+   * 路由名称
    */
   name?: string
   /**
-   * @description 路由嵌套
+   *  路由嵌套
    */
   children?: RouteConfig[]
   /**
-   * @description 路由重定向
+   * 路由重定向
    */
   redirect?: RedirectOption
   /**
-   * @description 路由别名
+   * 路由别名
    */
   alias?: string | string[]
   /**
-   * @description 路由meta信息
+   * 路由meta信息
    */
   meta?: IMeta
   /**
-   * @description 路由守卫
+   * 路由守卫
    */
   beforeEnter?: NavigationGuard
   caseSensitive?: boolean
@@ -201,6 +201,15 @@ export interface Route {
   redirectedFrom?: string
   meta?: IMeta
 }
-export default function createRouter(router: RouteConfig): RouteConfig {
-  return router
+/**
+ * 路由对象或路由对象数组
+ */
+type createRouterConfig = RouteConfig |　RouteConfig[]
+/**
+ * 
+ * @param 路由对象或路由对象数组
+ */
+function createRouter(createRouterConfig: createRouterConfig): createRouterConfig {
+  return createRouterConfig
 }
+export default createRouter

@@ -1,13 +1,13 @@
 import Layout from '@/components/Layout'
 import createRouter from '@/router/createRouters'
 
-export default [
-  createRouter({
+export default createRouter([
+  {
     path: '/login',
     name: 'Login',
     component: () => import('@/views/login'),
-  }),
-  createRouter({
+  },
+  {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
@@ -21,5 +21,5 @@ export default [
         },
       },
     ],
-  }),
-]
+  },
+])

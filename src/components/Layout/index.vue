@@ -1,6 +1,6 @@
 <template>
-  <div class="layout-wrapper">
-    <div class="layout">
+  <div class="layout">
+    <div class="layout-wrapper">
       <layout-header
         class="layout-header"
       />
@@ -8,8 +8,8 @@
         <layout-sidebar
           :class="['layout-sidebar', sidebarCollapse ? 'layout-sidebar__resize' : '']"
         />
-        <div :class="['main-wrapper', sidebarCollapse ? 'main-wrapper__resize' : '']">
-          <router-view class="main" />
+        <div :class="['main', sidebarCollapse ? 'main__resize' : '']">
+          <router-view class="main-wrapper" />
         </div>
       </div>
       <layout-sittings class="layout-sittings" />

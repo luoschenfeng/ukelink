@@ -14,3 +14,6 @@ $background-color-darker-3: mix(#000, $background-color, 30%) !default;
 $background-color-lighter-1: mix(#fff, $background-color, 10%) !default;
 $background-color-lighter-2: mix(#fff, $background-color, 20%) !default;
 $background-color-lighter-3: mix(#fff, $background-color, 30%) !default;
+
+$box-shadow-light: $--box-shadow-light !default;
+$border-base: $--border-base !default;

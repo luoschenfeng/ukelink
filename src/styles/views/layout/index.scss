@@ -3,12 +3,10 @@
 @import './header.scss';
 @import './sidebar.scss';
 
-.layout-wrapper {
+.layout {
   height: 100%;
 
-  .layout {
-    height: 100%;
-
+  .layout-wrapper {
     .layout-header {
       position: fixed;
       top: 0;
@@ -19,7 +17,6 @@
     }
 
     .layout-content {
-      height: calc(100% - #{$layout-header-height});
       margin-top: $layout-header-height;
 
       .layout-sidebar {
@@ -32,19 +29,20 @@
         }
       }
 
-      .main-wrapper {
+      .main {
         padding: 2rem;
+        height: calc(100vh - #{$layout-header-height} - 0.5rem);
+        box-sizing: border-box;
         position: relative;
         overflow: hidden;
         margin-left: $sidebar-width-max;
         transition: margin 0.24s;
 
-        &.main-wrapper__resize {
-          margin-left: $sidebar-width-min;
-        }
+        @include genThemeStyle('box-shadow', $box-shadow-light);
+        @include genThemeStyle('border', $border-base);
 
-        .main {
-          padding: 2rem;
+        &.main__resize {
+          margin-left: $sidebar-width-min;
         }
       }
     }

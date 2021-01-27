@@ -1,7 +1,7 @@
 import request from './request'
 import login from './login'
 import common from './common'
-import router from './router'
+import contentExample from './contentExample'
 import dashboard from './dashboard'
 
 /**
@@ -11,6 +11,6 @@ export default {
   common,
   request,
   login,
-  router,
+  contentExample,
   dashboard,
 }
