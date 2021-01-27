@@ -1,0 +1,52 @@
+@import '../../common/variables/index.scss';
+@import '../../common/mixins/utils.scss';
+@import './header.scss';
+@import './sidebar.scss';
+
+.layout-wrapper {
+  height: 100%;
+
+  .layout {
+    height: 100%;
+
+    .layout-header {
+      position: fixed;
+      top: 0;
+      z-index: 1;
+      overflow: hidden;
+      height: $layout-header-height;
+      width: 100%;
+    }
+
+    .layout-content {
+      height: calc(100% - #{$layout-header-height});
+      margin-top: $layout-header-height;
+
+      .layout-sidebar {
+        position: fixed;
+        top: $layout-header-height;
+        width: $sidebar-width-max;
+
+        &.layout-sidebar__resize {
+          width: $sidebar-width-min;
+        }
+      }
+
+      .main-wrapper {
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+        margin-left: $sidebar-width-max;
+        transition: margin 0.24s;
+
+        &.main-wrapper__resize {
+          margin-left: $sidebar-width-min;
+        }
+
+        .main {
+          padding: 2rem;
+        }
+      }
+    }
+  }
+}

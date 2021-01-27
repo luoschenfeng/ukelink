@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar_menu">
+  <div class="sidebar-menu">
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         :default-active="activeMenu"

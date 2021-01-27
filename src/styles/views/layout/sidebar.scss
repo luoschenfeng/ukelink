@@ -1,0 +1,99 @@
+@import '../../common/variables/index.scss';
+@import '../../common/mixins/utils.scss';
+
+@mixin menu-theme {
+  .el-submenu__title {
+    &:focus {
+      @include genThemeStyle('background-color', $background-color-darker-1);
+    }
+
+    &:hover {
+      @include genThemeStyle('background-color', $background-color);
+    }
+  }
+
+  .el-menu-item {
+    &:focus {
+      @include genThemeStyle('background-color', $background-color-darker-1);
+    }
+
+    &:hover {
+      @include genThemeStyle('background-color', $background-color);
+    }
+  }
+}
+
+@mixin submenu-theme {
+  .el-submenu__title {
+    @include genThemeStyle('background-color', $background-color-lighter-1);
+
+    &:hover {
+      @include genThemeStyle('background-color', $background-color-lighter-2);
+    }
+  }
+
+  .el-menu-item {
+    @include genThemeStyle('background-color', $background-color-lighter-1);
+
+    &:hover {
+      @include genThemeStyle('background-color', $background-color-lighter-2);
+    }
+  }
+}
+
+.layout-sidebar.sidebar-menu {
+  height: calc(100vh - #{$layout-header-height});
+  width: $sidebar-width-max;
+  box-sizing: border-box;
+  transition: $all-transition;
+
+  .el-scrollbar {
+    height: 100%;
+
+    .scrollbar-wrapper {
+      overflow-x: hidden;
+
+      .el-scrollbar__view {
+        height: 100%;
+
+        .el-menu {
+          height: 100%;
+          border-right: none;
+
+          @include genThemeStyle('background-color', $background-color-darker-1);
+          @include menu-theme;
+
+          .menu-item_link {
+            text-decoration: none;
+          }
+
+          &.el-menu--collapse {
+            .el-submenu {
+              .el-submenu__title {
+                span {
+                  display: inline-block;
+                  height: 0;
+                  width: 0;
+                  overflow: hidden;
+                  visibility: hidden;
+                }
+
+                .el-submenu__icon-arrow {
+                  display: none;
+                }
+              }
+
+              .el-menu-item {
+                @extend .el-submenu__title;
+              }
+            }
+          }
+
+          .el-submenu .menu__nest {
+            @include submenu-theme;
+          }
+        }
+      }
+    }
+  }
+}

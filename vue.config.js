@@ -13,7 +13,7 @@ module.exports = {
         return [
           ...args,
           {
-            title: 'vue-oa',
+            title: 'ulelink',
           },
         ]
       })

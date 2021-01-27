@@ -13,9 +13,9 @@
   }
 }
 
-@mixin genThemeStyle($property, $colorObject, $isBody: false) {
+@mixin genThemeStyle($property, $colorObject) {
   @each $theme in $themeList {
-    #{if($isBody, '&', '.#{$theme} &')} {
+    .#{$theme} & {
       #{$property}: map-get($colorObject, #{$theme});
     }
   }
@@ -37,24 +37,23 @@
       border-radius: 5px;
       width: 6px;
 
-      @include genThemeStyle('background', $color-primary, true);
+      @include genThemeStyle('background', $color-primary);
     }
 
     &-corner {/* stylelint-disable-line */
-      @include genThemeStyle('background', $background-color-base, true);
+      @include genThemeStyle('background', $background-color-base);
     }
 
     &-track {/* stylelint-disable-line */
-      @include genThemeStyle('background', $background-color-base, true);
+      @include genThemeStyle('background', $background-color-base);
 
       &-piece { /* stylelint-disable-line */
         width: 6px;
 
-        @include genThemeStyle('background', $background-color-base, true);
+        @include genThemeStyle('background', $background-color-base);
       }
     }
   }
-
 }
 
 /* Placeholder

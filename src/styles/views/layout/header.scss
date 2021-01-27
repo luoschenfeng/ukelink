@@ -1,0 +1,82 @@
+@import '../../common/variables/index.scss';
+@import '../../common/mixins/utils.scss';
+
+.header {
+  @include genThemeStyle('background', $background-color-darker-1);
+  @include genThemeStyle('color', $color-text-primary);
+  @include vertical-center;
+
+  .header-title {
+    display: inline-block;
+    vertical-align: middle;
+    width: $sidebar-width-max;
+    overflow: hidden;
+    height: 100%;
+
+    @include vertical-center;
+
+    .title-menu {
+      display: inline-block;
+      vertical-align: middle;
+      width: $sidebar-width-min;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      box-sizing: border-box;
+    }
+
+    .title-link {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: $font-size-large;
+      text-align: center;
+
+      @include hasEvent;
+
+      .icon-vue {
+        vertical-align: middle;
+      }
+
+      .title-link__h1 {
+        font-size: $font-size-large;
+        padding-left: 1rem;
+        display: inline-block;
+      }
+    }
+  }
+
+  .header-operate {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    vertical-align: middle;
+    height: 100%;
+    width: $header-operate-width;
+    padding: 0 1rem;
+    box-sizing: border-box;
+
+    @include vertical-center;
+
+    .header-message,
+    .header-dropdown-menu {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .header-message {
+      @include vertical-center;
+
+      .message_item {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 1rem;
+      }
+    }
+
+    .header-dropdown-menu {
+      margin: 0 1rem;
+
+      @include hasEvent;
+    }
+  }
+}

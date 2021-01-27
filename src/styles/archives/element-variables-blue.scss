@@ -24,7 +24,7 @@ $--color-black: #000 !default;
 /// color|1|Font Color|2
 $--color-text-primary: #f3f1ed !default; //change
 /// color|1|Font Color|2
-$--color-text-regular: #e6e2da !default; //change
+$--color-text-regular: #dad4c8 !default; //change
 /// color|1|Font Color|2
 $--color-text-secondary: #a6acad !default; //change
 /// color|1|Font Color|2
@@ -690,13 +690,13 @@ $--popover-title-font-color: $--color-text-primary !default;
 /* Tooltip
 -------------------------- */
 /// color|1|Color|0
-$--tooltip-fill: $--color-text-primary !default;
+$--tooltip-fill: $--color-white !default;
 /// color|1|Color|0
 $--tooltip-color: $--color-text-primary !default;
 /// fontSize||Font|1
 $--tooltip-font-size: 12px !default;
 /// color||Color|0
-$--tooltip-border-color: $--color-text-primary !default;
+$--tooltip-border-color: $--color-white !default;
 $--tooltip-arrow-size: 6px !default;
 /// padding||Spacing|3
 $--tooltip-padding: 10px !default;
@@ -731,7 +731,7 @@ $--tree-expand-icon-color: $--color-text-placeholder !default;
 -------------------------- */
 $--dropdown-menu-box-shadow: $--box-shadow-light !default;
 $--dropdown-menuItem-hover-fill: $--color-primary-light-9 !default;
-$--dropdown-menuItem-hover-color: $--link-color !default;
+$--dropdown-menuItem-hover-color: $--link-hover-color !default;
 
 /* Badge
 -------------------------- */
@@ -782,7 +782,7 @@ $--steps-padding: 20px !default;
 /// fontSize||Font|1
 $--menu-item-font-size: $--font-size-base !default;
 /// color||Color|0
-$--menu-item-font-color: $--color-text-primary !default;
+$--menu-item-font-color: $--color-text-regular !default;
 /// color||Color|0
 $--menu-background-color: $--color-white !default;
 $--menu-item-hover-fill: $--color-primary-light-9 !default;

@@ -34,6 +34,13 @@
         >
           <svg-icon icon-name="email" />
         </el-badge>
+        <el-dropdown class="message_item">
+          <svg-icon icon-name="lang" />
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>中文</el-dropdown-item>
+            <el-dropdown-item>English</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
       </div>
       <div class="header-dropdown-menu">
         <el-dropdown>
@@ -44,11 +51,7 @@
             />
           </div>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>黄金糕</el-dropdown-item>
-            <el-dropdown-item>狮子头</el-dropdown-item>
-            <el-dropdown-item>螺蛳粉</el-dropdown-item>
-            <el-dropdown-item>双皮奶</el-dropdown-item>
-            <el-dropdown-item>蚵仔煎</el-dropdown-item>
+            <el-dropdown-item>退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </div>
@@ -84,76 +87,3 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-.header {
-  @include genThemeStyle('background', $background-color-darker);
-  @include genThemeStyle('color', $color-text-primary);
-  @include vertical-center;
-
-  .header-title {
-    display: inline-block;
-    vertical-align: middle;
-    width: $sidebar-width-max;
-    overflow: hidden;
-    height: 100%;
-
-    @include vertical-center;
-
-    .title-menu {
-      display: inline-block;
-      vertical-align: middle;
-      width: $sidebar-width-min;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      box-sizing: border-box;
-    }
-
-    .title-link {
-      display: inline-block;
-      vertical-align: middle;
-      font-size: $font-size-large;
-      text-align: center;
-
-      @include hasEvent;
-
-      .icon-vue {
-        vertical-align: middle;
-      }
-
-      .title-link__h1 {
-        font-size: $font-size-large;
-        padding-left: 1rem;
-        display: inline-block;
-      }
-    }
-  }
-
-  .header-operate {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0 1rem;
-    // position: absolute;
-    // right: 0;
-    // height: 100%;
-    .header-message,
-    .header-dropdown-menu {
-      // display: inline-block;
-      // vertical-align: middle;
-    }
-
-    .header-message {
-      .message_item {
-        // display: inline-block;
-        // vertical-align: middle;
-        margin: 0 1rem;
-      }
-    }
-
-    .header-dropdown-menu {
-      margin: 0 1rem;
-
-      @include hasEvent;
-    }
-  }
-}
-</style>

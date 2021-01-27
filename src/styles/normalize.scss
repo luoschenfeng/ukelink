@@ -27,19 +27,23 @@ body {
     Arial,
     sans-serif;
 
-  @include genThemeStyle('color', $color-text-regular, true);
-  @include genThemeStyle('background', $background-color-dark, true);
+  @include genThemeStyle('color', $color-text-regular);
   @include scroll-bar;
 }
 
 #app {
-  height: 100%;
-  font-size: $font-size-base;
   min-height: 100%;
+  font-size: $font-size-base;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
+
+  @include genThemeStyle('background-color', $background-color);
+  @include genThemeStyle('background-image', $background-image-app);
+
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1,
@@ -51,6 +55,18 @@ h6,
 strong,
 em {
   @include genThemeStyle('color', $color-text-primary);
+}
+
+a {
+  text-decoration: none;
+
+  @include genThemeStyle('color', $color-text-primary);
+}
+
+a:hover,
+a:focus,
+a:active {
+  @include genThemeStyle('color', $color-primary);
 }
 
 input {

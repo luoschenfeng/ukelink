@@ -1,7 +1,7 @@
 const et = require('element-themex')
 
 et.run({
-  config: './src/styles/archives/blue-element-variables.scss',
+  config: './src/styles/archives/element-variables-blue.scss',
   out: './src/assets/theme/style/blue',
   minimize: true,
 })

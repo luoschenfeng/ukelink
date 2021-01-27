@@ -1,10 +1,16 @@
 @import "./../../../archives/element-variables-blue.scss";
 
 $color-primary: $--color-primary !default;
-$background-color-base: $--background-color-base !default;
-$background-color-dark: #06495c !default;
-$background-color-darker: mix(#000, $background-color-dark, 20%) !default;
+$background-color-base: $--background-color-base !default; //hover
 $color-text-primary: $--color-text-primary !default;
 $color-text-regular: $--color-text-regular !default;
 $color-text-secondary: $--color-text-secondary !default;
 $color-text-placeholder: $--color-text-placeholder !default;
+
+$background-color: #022e3c !default; // header
+$background-color-darker-1: mix(#000, $background-color, 10%) !default;
+$background-color-darker-2: mix(#000, $background-color, 20%) !default;
+$background-color-darker-3: mix(#000, $background-color, 30%) !default;
+$background-color-lighter-1: mix(#fff, $background-color, 10%) !default;
+$background-color-lighter-2: mix(#fff, $background-color, 20%) !default;
+$background-color-lighter-3: mix(#fff, $background-color, 30%) !default;
