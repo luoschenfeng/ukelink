@@ -14,7 +14,7 @@ import {
 } from '@/constMap'
 import {
   getToken,
-} from '@/utils/token'
+} from '@/store/cookies/token'
 import {
   isString,
 } from '@/utils/validate'
@@ -111,21 +111,22 @@ instance.interceptors.response.use(function (response) {
  *
  */
 function request({
-  url, method = 'get', params = {},
+  url, data = {}, method = 'get',
 }) {
   let config = {
     url: url,
     method: method,
   }
 
-  params = filterObject(params, (value) => !isString(value) || value.trim().length === 0)
-  if (method === 'get') {
-    config.params = params
+  data = filterObject(data, (value) => !isString(value) || value.trim().length === 0)
+  if (Object.keys(data).length) {
+    if (method === 'get') {
+      config.params = data
+    }
+    if (method === 'post') {
+      config.data = data
+    }
   }
-  if (method === 'post') {
-    config.data = params
-  }
-
   return instance(config)
 }
 

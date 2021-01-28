@@ -101,6 +101,9 @@ export default {
       return this.$route.query.next || '/'
     },
   },
+  created() {
+    this.$store.dispatch('user/UserInfoCoalescing')
+  },
   methods: {
     handleLogin() {
       this.enableSubmit = false

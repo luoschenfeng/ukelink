@@ -2,15 +2,26 @@ import router from  '.'
 import store from '@/store'
 import {
   getToken,
-} from '@/utils/token'
+} from '@/store/cookies/token'
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
+NProgress.configure({
+  showSpinner: false, 
+}) 
 router.beforeEach(async (to, from, next) => {
+
+  // start progress bar
+  NProgress.start()
   const token = getToken()
 
-  // 不能时fullPath
+  // 不能是fullPath
   if (to.path === '/login') {
     if (token) {
       next('/')
+
+      // hack: https://github.com/PanJiaChen/vue-element-admin/pull/2939
+      NProgress.done()
     } else {
       next()
     }
@@ -26,6 +37,7 @@ router.beforeEach(async (to, from, next) => {
             roles,
           } = await store.dispatch('user/userInfo')
 
+          debugger
           let routes = await store.dispatch('permission/generateRoutes', roles)
 
           router.addRoutes(routes)
@@ -40,9 +52,17 @@ router.beforeEach(async (to, from, next) => {
         }
       } catch (err) {
         next(new Error(err))
+        NProgress.done()
       }
     } else {
       next(`/login?next=${to.fullPath}`)
+      NProgress.done()
     }
   }
+})
+
+router.afterEach(() => {
+
+  // finish progress bar
+  NProgress.done()
 })

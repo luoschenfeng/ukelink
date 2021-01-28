@@ -16,7 +16,7 @@
       >
         <svg-icon icon-name="vue" />
         <h1 class="title-link__h1">
-          ukelink
+          {{ $t('layout.header.title') }}
         </h1>
       </router-link>
     </div>
@@ -37,8 +37,8 @@
         <el-dropdown class="message_item">
           <svg-icon icon-name="lang" />
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>中文</el-dropdown-item>
-            <el-dropdown-item>English</el-dropdown-item>
+            <el-dropdown-item>{{ $t('layout.header.lang.zh-CN') }}</el-dropdown-item>
+            <el-dropdown-item>{{ $t('layout.header.lang.english') }}</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </div>
@@ -51,7 +51,7 @@
             />
           </div>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>退出登录</el-dropdown-item>
+            <el-dropdown-item> {{ $t('layout.header.logout') }}</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </div>
@@ -76,7 +76,7 @@ export default {
         return this.$store.getters['sidebarCollapse']
       },
       set(status) {
-        this.$store.dispatch('settings/setSidebarCollapse', status)
+        this.$store.dispatch('sidebar/setSidebarCollapse', status)
       },
     },
   },

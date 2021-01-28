@@ -520,11 +520,14 @@ export default {
   .section-search {
     @include shadow;
 
-    margin-bottom: 2rem;
+    padding: 2.2rem 3rem 0;
   }
 
   .section-content {
     @include shadow;
+
+    margin-top: 1rem;
+    padding: 1.2rem 3rem;
 
     .content-operate {
       overflow: hidden;
@@ -540,17 +543,15 @@ export default {
     }
 
     .content-data {
-      // padding: 1rem 0;
-
       .data-wrapper {
-        .data-table {}
+        .data-table {
+          .data-table__view {
+            padding: 1rem 0;
+          }
 
-        .data-table__view {
-          padding: 1rem 0;
-        }
-
-        .data-table__pagination {
-          padding: 1rem 0;
+          .data-table__pagination {
+            padding: 1rem 0;
+          }
         }
       }
     }

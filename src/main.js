@@ -8,7 +8,7 @@ import {
 import '@/styles/index.scss';
 
 import router from '@/router'
-import '@/router/permission'
+import '@/router/navigationGuards'
 
 // setup element-ui
 import '@/element-ui'

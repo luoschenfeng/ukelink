@@ -1,15 +1,15 @@
 <template>
+  <!-- https://github.com/ElemeFE/element/issues/13453 -->
   <svg
-    class="svg-icon"
-    :class="selfClasses"
+    :class="[selfClasses, 'svg-icon']"
     aria-hidden="true"
-    v-on="$listeners"
   >
     <use :xlink:href="iconHref" />
   </svg>
 </template>
 
 <script>
+
 
 /**
 * @see https://panjiachen.github.io/vue-element-admin-site/feature/component/svg-icon.html#usage

@@ -8,6 +8,7 @@
 
 html {
   height: 100%;
+  line-height: 1.2;
   box-sizing: border-box;
   font-size: 62.5%;
 }
@@ -71,6 +72,10 @@ a:active {
 
 input {
   background-color: transparent;
+}
+
+.icon-block {
+  display: inline;
 }
 
 .svg-icon {

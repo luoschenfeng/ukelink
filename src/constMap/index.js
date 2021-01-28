@@ -7,10 +7,25 @@ export const HTTP_REQUEST_SUCCESS_STATUS_CODE =  1
 
 /**
  * @type {string}
- * @default https://dummyimage.com/100x100/666/666&text=default-avatar
+ * @default ~@/assets/images/avatar.svg
  * @description  default avatar
  */
-export const DEFAULT_AVATAR = 'https://dummyimage.com/100x100/666/666&text=default-avatar'
+export const DEFAULT_AVATAR = '~@/assets/images/avatar.svg'
+
+/**
+ * @type {string}
+ * @default zh-CN
+ * @description  default lang
+ */
+export const DEFAULT_LANG = 'zh-CN'
+
+/**
+ * @type {string}
+ * @default blue
+ * @description  default theme
+ */
+export const DEFAULT_THEME = 'blue'
+
 
 export const argsTag = '[object Arguments]'
 

@@ -2,15 +2,15 @@ import request from '@/utils/request'
 
 /**
  * @description 登录
- * @param {object} params
- * @param {string} params.username
- * @param {object} params.password
+ * @param {object} data
+ * @param {string} data.username
+ * @param {object} data.password
  */
-export function login(params) {
+export function login(data) {
   return request({
     url: 'api/login',
     method: 'post',
-    params,
+    data,
   })
 }
 

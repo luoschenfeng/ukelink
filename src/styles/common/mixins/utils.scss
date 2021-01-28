@@ -75,9 +75,6 @@
 @mixin shadow {
   @include genThemeStyle('box-shadow', $box-shadow-light);
   @include genThemeStyle('border', $border-base);
-
-  padding: 2rem 4rem;
-  border: 1px solid #bdc3cf;
 }
 
 @mixin hasEvent {
