@@ -11,7 +11,7 @@ import {
 } from '.'
 import {
   HTTP_REQUEST_SUCCESS_STATUS_CODE,
-} from '@/constMap'
+} from '@/const'
 import {
   getToken,
 } from '@/store/cookies/token'
@@ -38,6 +38,7 @@ instance.interceptors.request.use(function (config) {
 }, function (error) {
 
   // Do something with request error
+  Message.error(error)
   return Promise.reject(error)
 })
 
@@ -90,6 +91,7 @@ instance.interceptors.response.use(function (response) {
         }
       }
     } catch (err) {
+      Message.error(err)
       return Promise.reject(err)
     }
   }
@@ -98,6 +100,7 @@ instance.interceptors.response.use(function (response) {
 
   // Any status codes that falls outside the range of 2xx cause this function to trigger
   // Do something with response error
+  Message.error(err)
   return Promise.reject(err)
 })
 

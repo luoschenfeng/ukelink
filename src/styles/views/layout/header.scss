@@ -66,10 +66,16 @@
     .header-message {
       @include vertical-center;
 
-      .message_item {
+      .message-item {
         display: inline-block;
         vertical-align: middle;
         margin: 0 1rem;
+
+        &.lang {
+          .lang__select: {
+            display: none;
+          }
+        }
       }
     }
 

@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import App from '@/App.vue'
 import store from '@/store'
-import {
-  i18n,
-} from '@/lang'
+import i18n from '@/lang'
 
 import '@/styles/index.scss';
 
@@ -15,7 +13,7 @@ import '@/element-ui'
 import '@/icons'
 Vue.config.productionTip = false;
 
-export  default  new Vue({
+new Vue({
   i18n,
   router,
   store,

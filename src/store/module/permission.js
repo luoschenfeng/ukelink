@@ -35,14 +35,14 @@ function filterRouters(dynimicRoutes, roles) {
 
   let routes = [ ...dynimicRoutes ]
 
-  for (let route of routes) {
-    let tmp = route
+  for (let item of routes) {
+    let route = item
 
     if (hasPermission(route, roles)) {
-      if (tmp.children) {
-        tmp.children = filterRouters(tmp.children, roles)
+      if (route.children) {
+        route.children = filterRouters(route.children, roles)
       }
-      result.push(tmp)
+      result.push(route)
     }
   }
   return result

@@ -2,7 +2,7 @@ import {
   setToken, getToken, removeToken,
 } from '@/store/cookies/token'
 import {
-  setRoles, getRoles, removeRoles,
+  setRoles, removeRoles,
 } from '@/store/localStorage/roles'
 import {
   setLang, getLang,
@@ -18,16 +18,20 @@ import {
 } from '@/store/localStorage/theme'
 import {
   DEFAULT_LANG, DEFAULT_AVATAR,  DEFAULT_THEME,
-} from '@/constMap'
+} from '@/const'
 import {
-  login as loginReq,
-  logout as logoutReq,
+  changeTheme, changeLang,
+} from '@/utils/setting'
+import {
+  login,
+  logout,
   getUserInfo,
 } from '@/api/login'
-
 const state = {
   token: getToken(),
-  roles: getRoles(),
+
+  // 为空使得强刷重新请求
+  roles: [],
   lang: getLang(),
   username: getUsername(),
   avatar: getAvatar(),
@@ -37,43 +41,53 @@ const state = {
 const mutations = {
   SET_TOKEN(state, token) {
     setToken(token)
+    state.token = token
   },
   REMOVE_TOKEN() {
     removeToken()
+    state.token = ''
   },
 
   
-  SET_ROLE(state, roles) {
+  SET_ROLES(state, roles) {
     setRoles(roles)
+    state.roles = roles
   },
-  REMOVE_ROLE() {
+  REMOVE_ROLES() {
     removeRoles()
+    state.roles = []
   },
 
 
   SET_LANG(state, lang) {
+    changeLang(lang)
     setLang(lang)
+    state.lang = lang
   },
 
   SET_USERNAME(state, username) {
     setUsername(username)
+    state.username = username
   },
   REMOVE_USERNAME() {
     removeUsername()
+    state.username = ''
   },
 
 
   SET_AVATAR(state, avatar) {
     setAvatar(avatar)
+    state.state = state
   },
   REMOVE_AVATAR() {
     removeAvatar()
+    state.avatar = ''
   },
 
   SET_THEME(state, theme) {
+    changeTheme(theme)
     setTheme(theme)
-
-    document.documentElement.className = theme
+    state.theme = theme
   },
 }
 
@@ -94,28 +108,24 @@ const actions = {
             roles, lang, username, avatar = DEFAULT_AVATAR, theme,
           } = data
 
-          commit('SET_ROLE', roles)
+          commit('SET_ROLES', roles)
           commit('SET_USERNAME', username)
           commit('SET_AVATAR', avatar)
 
           if (lang) {
             commit('SET_LANG', lang)
-          } else {
-            state.lang || commit('SET_LANG', DEFAULT_LANG)
+          } else if (state.lang) { commit('SET_LANG', state.lang) } else {
+            commit('SET_LANG', DEFAULT_LANG)
           }
 
           if (theme) {
             commit('SET_THEME', theme)
+          } else if (state.theme) {
+            changeTheme(state.theme)
           } else {
-            state.theme || commit('SET_THEME', DEFAULT_THEME)
+            commit('SET_THEME', DEFAULT_THEME)
           }
-          resolve({
-            roles: state.roles,
-            lang: state.lang,
-            username: state.username,
-            avatar: state.avatar,
-            theme: state.theme,
-          })
+          resolve(data)
         })
         .catch(err => reject(err))
     })
@@ -133,7 +143,7 @@ const actions = {
     commit,
   }, params) {
     return new Promise((resolve, reject) => {
-      loginReq(params)
+      login(params)
         .then(data => {
           const {
             token,
@@ -152,31 +162,34 @@ const actions = {
    * @param {object} param0.commit
    */
   logout({
-    commit, dispatch,
+    commit,
   }) {
     return new Promise((resolve, reject)=>{
-      logoutReq()
+      logout()
         .then(() => {
           commit('REMOVE_TOKEN')
-          dispatch('resetUserInfo')
+          commit('REMOVE_ROLES')
+          commit('REMOVE_USERNAME')
+          commit('REMOVE_AVATAR')
           resolve()
         })
         .catch(err => reject(err))
     })
   },
-  UserInfoCoalescing({
+
+  defaultCoalescing({
     state, commit,
   }) {
-    state.lang || commit('SET_LANG', DEFAULT_LANG)
-    state.theme || commit('SET_THEME', DEFAULT_THEME)
-  },
-  resetUserInfo({
-    commit,
-  }) {
-    commit('REMOVE_TOKEN')
-    commit('REMOVE_ROLE')
-    commit('REMOVE_USERNAME')
-    commit('REMOVE_AVATAR')
+    if (state.lang) {
+      changeLang(state.lang)
+    } else {
+      commit('SET_LANG', DEFAULT_LANG)
+    }
+    if (state.theme) {
+      changeTheme(state.theme)
+    } else {
+      commit('SET_THEME', DEFAULT_THEME)
+    }
   },
 }
 

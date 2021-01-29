@@ -24,21 +24,26 @@
       <div class="header-message">
         <el-badge
           :value="12"
-          class="message_item"
+          class="message-item"
         >
           <svg-icon icon-name="prompt" />
         </el-badge>
         <el-badge
           :value="12"
-          class="message_item"
+          class="message-item"
         >
           <svg-icon icon-name="email" />
         </el-badge>
-        <el-dropdown class="message_item">
-          <svg-icon icon-name="lang" />
+        <el-dropdown class="message-item">
+          <div><svg-icon icon-name="lang" /></div>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>{{ $t('layout.header.lang.zh-CN') }}</el-dropdown-item>
-            <el-dropdown-item>{{ $t('layout.header.lang.english') }}</el-dropdown-item>
+            <el-dropdown-item
+              v-for="(local,index) of langList"
+              :key="index"
+              @click="handlleChangeLang(local)"
+            >
+              {{ $t('layout.header.lang.'+ local) }}
+            </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </div>
@@ -51,7 +56,11 @@
             />
           </div>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item> {{ $t('layout.header.logout') }}</el-dropdown-item>
+            <el-dropdown-item>
+              <div @click="logout">
+                {{ $t('layout.header.logout') }}
+              </div>
+            </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </div>
@@ -60,6 +69,12 @@
 </template>
 
 <script>
+import {
+  LANG_LIST, 
+} from '@/const'
+import {
+  changeLang,
+} from '@/utils/setting'
 export default {
   name: 'LayoutHeader',
   data: function () {
@@ -68,6 +83,7 @@ export default {
         size: 'medium',
         url: 'https://cdn.pixabay.com/photo/2017/03/05/23/14/girl-2120196_960_720.jpg',
       },
+      langList: LANG_LIST,
     }
   },
   computed: {
@@ -79,10 +95,23 @@ export default {
         this.$store.dispatch('sidebar/setSidebarCollapse', status)
       },
     },
+    lang() {
+      return this.$store.getters['user/lang']
+    },
   },
   methods: {
     handleToggleSidebar() {
       this.sidebarCollapse = !this.sidebarCollapse
+    },
+    handlleChangeLang(lang) {
+      changeLang(lang)
+    },
+    logout() {
+      this.$store.dispatch('user/logout').then(() => {
+        this.$router.push({
+          name: 'login',
+        })
+      })
     },
   },
 }

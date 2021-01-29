@@ -13,11 +13,26 @@ export const HTTP_REQUEST_SUCCESS_STATUS_CODE =  1
 export const DEFAULT_AVATAR = '~@/assets/images/avatar.svg'
 
 /**
+ * @type {array}
+ * @description  lang list
+ */
+export const LANG_LIST = [
+  'zh',
+  'en', 
+]
+
+/**
  * @type {string}
- * @default zh-CN
+ * @default zh
  * @description  default lang
  */
-export const DEFAULT_LANG = 'zh-CN'
+export const DEFAULT_LANG = 'zh'
+
+/**
+ * @type {array}
+ * @description  themeList
+ */
+export const THEME_LIST = [ 'blue' ]
 
 /**
  * @type {string}

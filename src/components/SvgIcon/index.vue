@@ -1,5 +1,4 @@
 <template>
-  <!-- https://github.com/ElemeFE/element/issues/13453 -->
   <svg
     :class="[selfClasses, 'svg-icon']"
     aria-hidden="true"

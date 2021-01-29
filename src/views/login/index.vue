@@ -28,7 +28,7 @@
             tabindex="2"
             autocomplete="on"
             show-password
-            @keyup.enter.native="handleLogin"
+            @keyup.enter.native="login"
           />
         </el-form-item>
         <el-form-item class="form-item-submit">
@@ -36,7 +36,7 @@
             type="primary"
             :loading="!enableSubmit"
             :disabled="!enableSubmit"
-            @click="handleLogin"
+            @click="login"
           >
             {{ $t('login.text.login') }}
           </el-button>
@@ -101,11 +101,11 @@ export default {
       return this.$route.query.next || '/'
     },
   },
-  created() {
-    this.$store.dispatch('user/UserInfoCoalescing')
+  mounted() {
+    this.$store.dispatch('user/defaultCoalescing')
   },
   methods: {
-    handleLogin() {
+    login() {
       this.enableSubmit = false
       let params = {
         username: this.LoginForm.username,
@@ -127,7 +127,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .login {
-  height: 100%;
+  height: 100vh;
 
   .login-wrapper {
     height: 100%;
@@ -136,11 +136,11 @@ export default {
     @include genThemeStyle('background', $background-color-base);
     @include vertical-center;
 
-    &-form {
+    .login-form {
       display: inline-block;
       vertical-align: middle;
 
-      >>> .form-item-submit {
+      .form-item-submit::v-deep {
         margin-bottom: 0;
 
         .el-button {

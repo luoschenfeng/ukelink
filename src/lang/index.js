@@ -1,30 +1,34 @@
 // i18n
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
-import zhLocale from './zh-CN'
+import zh from './zh-CN'
+import en from './en'
 import ElementLocale from 'element-ui/lib/locale'
-
 Vue.use(VueI18n)
 
 // 预设语言
 const loadedLanguages = [ 'zh' ]
 
-export const i18n = new VueI18n({
+const i18n = new VueI18n({
   locale: 'zh',
   fallbackLocale: 'zh',
   messages: {
-    zh: zhLocale,
+    zh: zh,
+    en: en,
   },
   /* eslint no-console: ["warn", { allow: ["warn"] }] */
   missing: (local, key) => { console.warn(`[VueI18n] the ${local} local not find the key: ${key}`) },
 })
 
+ElementLocale.i18n((key, value) => i18n.t(key, value))
+
+
 export function loadLanguageAsync(lang) {
   if (i18n.locale !== lang) {
     if (!loadedLanguages.includes(lang)) {
-      import(/* webpackChunkName: "lang-request" */ `@/lang/${lang}`).then(msgs => {
+      import(/* webpackChunkName: "lang-request" */ `@/lang/${lang}`).then(messages => {
         // is a object
-        i18n.setLocaleMessage(lang, msgs.default)
+        i18n.setLocaleMessage(lang, messages.default)
         loadedLanguages.push(lang)
       })
     }
@@ -38,3 +42,5 @@ export function loadLanguageAsync(lang) {
   }
   return Promise.resolve(lang)
 }
+
+export default i18n

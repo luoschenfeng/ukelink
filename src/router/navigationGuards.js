@@ -4,7 +4,9 @@ import {
   getToken,
 } from '@/store/cookies/token'
 import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
+import {
+  Message,
+} from 'element-ui'
 
 NProgress.configure({
   showSpinner: false, 
@@ -37,10 +39,11 @@ router.beforeEach(async (to, from, next) => {
             roles,
           } = await store.dispatch('user/userInfo')
 
-          debugger
           let routes = await store.dispatch('permission/generateRoutes', roles)
 
           router.addRoutes(routes)
+
+          // router.options.push(routes)
 
           /*
           * @see https://juejin.im/post/6844903478880370701
@@ -51,7 +54,8 @@ router.beforeEach(async (to, from, next) => {
           })
         }
       } catch (err) {
-        next(new Error(err))
+        Message.error(err || 'navigation Guards Error')
+        next(`/login?next=${to.fullPath}`)
         NProgress.done()
       }
     } else {

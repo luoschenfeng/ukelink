@@ -3,10 +3,14 @@ const storageKey = 'roles'
 
 /**
  * 获取用户角色
- * @return {array | string}
+ * @return {array}
  */
 export function getRoles() {
-  return localStorage.getItem(storageKey)
+  let roles =  localStorage.getItem(storageKey)
+
+  if (roles) {
+    return roles.split(',')
+  } else { return [] }
 }
 
 /**
@@ -14,7 +18,7 @@ export function getRoles() {
  * @param {string} value 用户角色
  */
 export function setRoles(value) {
-  localStorage.getItem(storageKey, value)
+  localStorage.setItem(storageKey, value)
 }
 
 /**
