@@ -8,9 +8,13 @@ import {
   Message,
 } from 'element-ui'
 
+// import {
+//   Message,
+// } from 'element-ui'
+
 NProgress.configure({
-  showSpinner: false, 
-}) 
+  showSpinner: false,
+})
 router.beforeEach(async (to, from, next) => {
 
   // start progress bar
@@ -20,10 +24,10 @@ router.beforeEach(async (to, from, next) => {
   // 不能是fullPath
   if (to.path === '/login') {
     if (token) {
+      NProgress.done()
       next('/')
 
       // hack: https://github.com/PanJiaChen/vue-element-admin/pull/2939
-      NProgress.done()
     } else {
       next()
     }
@@ -37,7 +41,7 @@ router.beforeEach(async (to, from, next) => {
         } else {
           const {
             roles,
-          } = await store.dispatch('user/userInfo')
+          } = await store.dispatch('setting/userInfo')
 
           let routes = await store.dispatch('permission/generateRoutes', roles)
 
@@ -54,13 +58,15 @@ router.beforeEach(async (to, from, next) => {
           })
         }
       } catch (err) {
+
         Message.error(err || 'navigation Guards Error')
-        next(`/login?next=${to.fullPath}`)
         NProgress.done()
+        next(`/login?next=${to.fullPath}`)
+
       }
     } else {
-      next(`/login?next=${to.fullPath}`)
       NProgress.done()
+      next(`/login?next=${to.fullPath}`)
     }
   }
 })

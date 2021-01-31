@@ -5,6 +5,7 @@
   @include genThemeStyle('background', $background-color-darker-1);
   @include genThemeStyle('color', $color-text-primary);
   @include vertical-center;
+  @include shadow;
 
   .header-title {
     display: inline-block;
@@ -44,12 +45,17 @@
     }
   }
 
+  .header-breadcrumb {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   .header-operate {
     display: inline-block;
+    vertical-align: middle;
     position: absolute;
     top: 0;
     right: 0;
-    vertical-align: middle;
     height: 100%;
     width: $header-operate-width;
     padding: 0 1rem;
@@ -71,9 +77,12 @@
         vertical-align: middle;
         margin: 0 1rem;
 
-        &.lang {
-          .lang__select: {
-            display: none;
+        &.lang::v-deep {
+          @at-root {
+            .lang-drapdown__item.selected {
+              @include genThemeStyle('color', $color-primary);
+              @include genThemeStyle('background', $background-color-base);
+            }
           }
         }
       }

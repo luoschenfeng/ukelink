@@ -5,6 +5,6 @@ export default {
       zh: '中文',
       en: 'English',
     },
-    logout: '退出登录',
+    logout: 'logout',
   },
 }

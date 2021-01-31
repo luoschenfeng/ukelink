@@ -87,7 +87,7 @@ interface IMeta {
    */
   roles?: Array<number | string>
   /**
-   *  标题 （侧边栏等标题）,并且决定了是否显示在侧边栏
+   *  标题 （侧边栏等标题）,如果没有标题则在侧边栏和面包屑中隐藏
    */
   title?: string
   /**
@@ -206,7 +206,7 @@ export interface Route {
  */
 type createRouterConfig = RouteConfig |　RouteConfig[]
 /**
- * 
+ *
  * @param 路由对象或路由对象数组
  */
 function createRouter(createRouterConfig: createRouterConfig): createRouterConfig {

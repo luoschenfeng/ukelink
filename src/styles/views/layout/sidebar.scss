@@ -60,6 +60,10 @@
           height: 100%;
           border-right: none;
 
+          .svg-icon {
+            padding-right: 0.5rem;
+          }
+
           @include genThemeStyle('background-color', $background-color-darker-1);
           @include menu-theme;
 

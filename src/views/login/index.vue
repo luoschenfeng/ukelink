@@ -102,7 +102,7 @@ export default {
     },
   },
   mounted() {
-    this.$store.dispatch('user/defaultCoalescing')
+    this.$store.dispatch('setting/defaultCoalescing')
   },
   methods: {
     login() {
@@ -112,7 +112,7 @@ export default {
         password: this.LoginForm.password,
       }
 
-      this.$store.dispatch('user/login', params)
+      this.$store.dispatch('setting/login', params)
         .then(() => {
           this.enableSubmit = true
           this.$router.push(this.next)

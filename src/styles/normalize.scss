@@ -74,6 +74,12 @@ input {
   background-color: transparent;
 }
 
+#nprogress .bar {
+  @include genThemeStyle('background-color', $color-primary, true);
+
+  height: 3px;
+}
+
 .svg-icon {
   width: $font-size-base;
   height: $font-size-base;

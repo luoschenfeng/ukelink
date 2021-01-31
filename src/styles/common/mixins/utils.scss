@@ -13,10 +13,18 @@
   }
 }
 
-@mixin genThemeStyle($property, $colorObject) {
+@mixin genThemeStyle($property, $colorObject, $important: false) {
   @each $theme in $themeList {
-    .#{$theme} & {
-      #{$property}: map-get($colorObject, #{$theme});
+    @if $important {
+      .#{$theme} & {
+        #{$property}: map-get($colorObject, #{$theme}) !important;
+      }
+    }
+
+    @else {
+      .#{$theme} & {
+        #{$property}: map-get($colorObject, #{$theme});
+      }
     }
   }
 }

@@ -1,17 +1,17 @@
 import {
   THEME_LIST,
 } from '@/const'
-import i18n from '@/lang'
+import i18n from '@/lang/i18n'
 
 /**
  * 通过在html中加类的方法改变主题
- * @param {'blue'} theme 
+ * @param {'blue'} theme
  */
 export function changeTheme(theme) {
   let {
-    classList, 
+    classList,
   } = document.documentElement
-  
+
   for (let item of THEME_LIST) {
     classList.remove(item)
   }
@@ -20,9 +20,9 @@ export function changeTheme(theme) {
 
 /**
  * 通过在html中加类的方法改变主题
- * @param {zh | en} lang 
+ * @param {zh | en} lang
  */
 export function changeLang(lang) {
-  i18n.local = lang
+  i18n.locale = lang
 }
 

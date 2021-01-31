@@ -2,6 +2,7 @@
   <svg
     :class="[selfClasses, 'svg-icon']"
     aria-hidden="true"
+    v-on="$listeners"
   >
     <use :xlink:href="iconHref" />
   </svg>

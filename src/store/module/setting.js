@@ -48,7 +48,7 @@ const mutations = {
     state.token = ''
   },
 
-  
+
   SET_ROLES(state, roles) {
     setRoles(roles)
     state.roles = roles
@@ -190,6 +190,11 @@ const actions = {
     } else {
       commit('SET_THEME', DEFAULT_THEME)
     }
+  },
+  setLang({
+    commit,
+  }, lang) {
+    commit('SET_LANG', lang)
   },
 }
 

@@ -2,9 +2,7 @@ import axios from 'axios'
 import {
   Message,
 } from 'element-ui'
-import {
-  i18n,
-} from '@/lang'
+import i18n from '@/lang/i18n'
 
 import {
   filterObject,
@@ -106,7 +104,7 @@ instance.interceptors.response.use(function (response) {
 
 /**
  * 请求封装
- * 
+ *
  * @param {object} config
  * @param {string} config.url
  * @param {string} config.method

@@ -1,7 +1,7 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "at-rule-no-unknown": [true, { "ignoreAtRules": ["mixin", "extend", "content", "include"] }],
+    "at-rule-no-unknown": null,
     "selector-pseudo-element-no-unknown": [true, { "ignorePseudoElements": ["v-deep", "/webkit/"] }],
     "selector-max-id": null
   }

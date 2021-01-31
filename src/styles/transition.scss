@@ -96,13 +96,24 @@
   transition: 0.3s width ease-in-out, 0.3s padding-left ease-in-out, 0.3s padding-right ease-in-out;
 }
 
-.list-enter-active,
-.list-leave-active {
-  transition: all 1s;
+.list-x-enter-active,
+.list-x-leave-active {
+  transition: all 0.5s;
 }
 
-.list-enter,
-.list-leave-active {
+.list-x-enter,
+.list-x-leave-active {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.list-y-enter-active,
+.list-y-leave-active {
+  transition: all 0.3s;
+}
+
+.list-y-enter,
+.list-y-leave-active {
   opacity: 0;
   transform: translateY(-30px);
 }

@@ -43,5 +43,7 @@
 import '@/assets/theme/style/blue/index.css';
 import Vue from 'vue';
 import ElementUI from 'element-ui';
-
-Vue.use(ElementUI);
+import i18n from '@/lang/i18n'
+Vue.use(ElementUI, {
+  i18n: (key, value) => i18n.t(key, value),
+});
