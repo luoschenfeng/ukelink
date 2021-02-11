@@ -1,4 +1,4 @@
-const et = require('element-themex')
+const et = require('custom-element-themex')
 
 et.run({
   config: './src/styles/archives/element-variables-blue.scss',
