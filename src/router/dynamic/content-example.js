@@ -24,7 +24,6 @@ export default createRouter(
         meta: {
           roles: [ 2 ],
           title: 'contentExample.title.ExampleOne',
-
           icon: 'example-one',
         },
       },

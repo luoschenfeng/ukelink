@@ -63,7 +63,6 @@ instance.interceptors.response.use(function (response) {
       } = res
 
       if (message) {
-        Message.error(message)
         throw message
       } else {
         if (code) {
@@ -79,17 +78,14 @@ instance.interceptors.response.use(function (response) {
           } else {
             prompt = `code ${code}`
           }
-          Message.error(prompt)
 
           // throw code also
           throw prompt
         } else {
-          Message.error(i18n.t('request.HTTP_STATUS_UNKNOWN'))
           throw i18n.t('request.HTTP_STATUS_UNKNOWN')
         }
       }
     } catch (err) {
-      Message.error(err)
       return Promise.reject(err)
     }
   }
@@ -98,7 +94,10 @@ instance.interceptors.response.use(function (response) {
 
   // Any status codes that falls outside the range of 2xx cause this function to trigger
   // Do something with response error
-  Message.error(err)
+  Message({
+    type: 'error',
+    message: err,
+  })
   return Promise.reject(err)
 })
 

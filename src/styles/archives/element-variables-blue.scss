@@ -16,33 +16,42 @@ $--color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !defau
 /* Color
 -------------------------- */
 /// color|1|Brand Color|0
-$--color-primary: #10d8b7 !default; // change
+$--color-primary: #16c9ab !default; // change
 /// color|1|Background Color|4
-$--color-white:rgba(6, 73, 92, 0.9) !default; // change
+$--color-white: #ecf0f3 !default; // change
 /// color|1|Background Color|4
 $--color-black: #000 !default;
 /// color|1|Font Color|2
-$--color-text-primary: #f3f1ed !default; //change
+$--color-text-primary: #c3cfd8 !default; //change
 /// color|1|Font Color|2
-$--color-text-regular: #dad4c8 !default; //change
+$--color-text-regular: #a5b7c5 !default; //change
 /// color|1|Font Color|2
-$--color-text-secondary: #a6acad !default; //change
+$--color-text-secondary: #8f9fad !default; //change
 /// color|1|Font Color|2
-$--color-text-placeholder: #718fa5 !default; //change
+$--color-text-placeholder: #667a80 !default; //change
 
 /// color|1|Border Color|3
-$--border-color-base: #2e4465 !default; //change
+$--border-color-base: #60788a !default; //change
 /// color|1|Border Color|3
-$--border-color-light: #697383 !default; //change
+$--border-color-light: #93a9b8 !default; //change
 /// color|1|Border Color|3
-$--border-color-lighter: #6f7a8a !default; //change
+$--border-color-lighter: #c7d1d8 !default; //change
 $--border-color-hover: $--border-color-lighter !default;
 /// color|1|Border Color|3
-$--border-color-extra-light: rgba(100, 138, 149, 0.9) !default; //change
+$--border-color-extra-light: #d8dfe7 !default; //change
 
 // Background
 /// color|1|Background Color|4
-$--background-color-base: rgba(105, 126, 141, 0.4) !default;
+$--background-color-base:rgba(10, 60, 78, 0.9) !default;
+$--hover-background-color:rgba(105, 126, 141, 0.4) !default;
+$--pop-background-color:rgba(6, 73, 92, 0.9) !default; // new pop
+$--input-background-color: rgba(53, 99, 125, 0.5) !default;
+
+/* Disable base
+-------------------------- */
+$--disabled-fill-base: rgba(128, 147, 147, 0.4) !default;
+$--disabled-color-base: $--color-text-placeholder !default;
+$--disabled-border-base: $--border-color-light !default;
 
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
@@ -60,17 +69,17 @@ $--color-warning: #c0984a !default;
 /// color|1|Functional Color|1
 $--color-danger:#ca5c5c !default;
 /// color|1|Functional Color|1
-$--color-info: #b8bdc6 !default;
+$--color-info: #a8bac2 !default;
 
-$--color-success-light: mix($--color-text-primary, $--color-success, 80%) !default;
-$--color-warning-light: mix($--color-text-primary, $--color-warning, 80%) !default;
-$--color-danger-light: mix($--color-text-primary, $--color-danger, 80%) !default;
-$--color-info-light: mix($--color-text-primary, $--color-info, 80%) !default;
+$--color-success-light: mix($--color-white, $--color-success, 75%) !default;
+$--color-warning-light: mix($--color-white, $--color-warning, 75%) !default;
+$--color-danger-light: mix($--color-white, $--color-danger, 75%) !default;
+$--color-info-light: mix($--color-white, $--color-info, 75%) !default;
 
-$--color-success-lighter: mix($--background-color-base, $--color-success, 90%) !default;
-$--color-warning-lighter: mix($--background-color-base, $--color-warning, 90%) !default;
-$--color-danger-lighter: mix($--background-color-base, $--color-danger, 90%) !default;
-$--color-info-lighter: mix($--background-color-base, $--color-info, 90%) !default;
+$--color-success-lighter: mix($--background-color-base, $--color-success, 85%) !default;
+$--color-warning-lighter: mix($--background-color-base, $--color-warning, 85%) !default;
+$--color-danger-lighter: mix($--background-color-base, $--color-danger, 85%) !default;
+$--color-info-lighter: mix($--background-color-base, $--color-info, 85%) !default;
 
 /* Link
 -------------------------- */
@@ -93,11 +102,11 @@ $--border-radius-zero: 0 !default;
 
 // Box-shadow
 /// boxShadow|1|Shadow|1
-$--box-shadow-base: 0 2px 4px rgba(171, 138, 148, 0.12), 0 0 6px rgba(171, 138, 148, 0.04) !default;
+$--box-shadow-base: 0 2px 4px rgba(22, 89, 107, 0.5), 0 0 6px rgba(45, 111, 129, 0.5) !default;
 // boxShadow|1|Shadow|1
-$--box-shadow-dark: 0 2px 4px rgba(6, 73, 92, 0.12), 0 0 6px rgba(6, 73, 92, 0.12) !default;
+$--box-shadow-dark: 0 2px 4px rgba(11, 73, 90, 0.5), 0 0 6px rgba(22, 89, 107, 0.5) !default;
 /// boxShadow|1|Shadow|1
-$--box-shadow-light: 0 2px 12px 0 rgba(122, 161, 171, 0.3) !default;
+$--box-shadow-light: 0 2px 12px 0 rgba(81, 116, 125, 0.5) !default;
 
 /* Fill
 -------------------------- */
@@ -139,12 +148,6 @@ $--index-normal: 1 !default;
 $--index-top: 1000 !default;
 $--index-popper: 2000 !default;
 
-/* Disable base
--------------------------- */
-$--disabled-fill-base: $--background-color-base !default;
-$--disabled-color-base: $--color-text-placeholder !default;
-$--disabled-border-base: $--border-color-light !default;
-
 /* Icon
 -------------------------- */
 $--icon-color: $--color-text-regular !default;
@@ -163,15 +166,15 @@ $--checkbox-input-width: 14px !default;
 /// borderRadius||Border|2
 $--checkbox-border-radius: $--border-radius-small !default;
 /// color||Color|0
-$--checkbox-background-color: $--color-white !default;
+$--checkbox-background-color: $--input-background-color !default;
 $--checkbox-input-border: $--border-base !default;
 
 /// color||Color|0
 $--checkbox-disabled-border-color: $--border-color-base !default;
-$--checkbox-disabled-input-fill: rgba(85, 107, 123, 0.9) !default;
+$--checkbox-disabled-input-fill: $--disabled-fill-base !default;
 $--checkbox-disabled-icon-color: $--color-text-placeholder !default;
 
-$--checkbox-disabled-checked-input-fill: $--border-color-extra-light !default;
+$--checkbox-disabled-checked-input-fill: $--disabled-fill-base !default;
 $--checkbox-disabled-checked-input-border-color: $--border-color-base !default;
 $--checkbox-disabled-checked-icon-color: $--color-text-placeholder !default;
 
@@ -226,7 +229,7 @@ $--radio-input-width: 14px !default;
 /// borderRadius||Border|2
 $--radio-input-border-radius: $--border-radius-circle !default;
 /// color||Color|0
-$--radio-input-background-color: $--color-white !default;
+$--radio-input-background-color: $--input-background-color !default;
 $--radio-input-border: $--border-base !default;
 /// color||Color|0
 $--radio-input-border-color: $--border-color-base !default;
@@ -246,7 +249,7 @@ $--radio-checked-font-color: $--color-primary !default;
 /// color||Color|0
 $--radio-checked-input-border-color: $--color-primary !default;
 /// color||Color|0
-$--radio-checked-input-background-color: $--color-white !default;
+$--radio-checked-input-background-color: $--input-background-color !default;
 /// color||Color|0
 $--radio-checked-icon-color: $--color-primary !default;
 
@@ -294,19 +297,19 @@ $--select-input-font-size: 14px !default;
 
 $--select-option-color: $--color-text-regular !default;
 $--select-option-disabled-color: $--color-text-placeholder !default;
-$--select-option-disabled-background: $--color-white !default;
+$--select-option-disabled-background: $--disabled-fill-base !default;
 /// height||Other|4
 $--select-option-height: 34px !default;
-$--select-option-hover-background: $--background-color-base !default;
+$--select-option-hover-background: $--hover-background-color !default;
 /// color||Color|0
 $--select-option-selected-font-color: $--color-primary !default;
-$--select-option-selected-hover: $--background-color-base !default;
+$--select-option-selected-hover: $--hover-background-color !default;
 
 $--select-group-color: $--color-info !default;
 $--select-group-height: 30px !default;
 $--select-group-font-size: 12px !default;
 
-$--select-dropdown-background: $--color-white !default;
+$--select-dropdown-background: $--pop-background-color !default;
 $--select-dropdown-shadow: $--box-shadow-light !default;
 $--select-dropdown-empty-color: #999 !default;
 /// height||Other|4
@@ -367,7 +370,7 @@ $--messagebox-danger-color: $--color-danger !default;
 -------------------------- */
 $--message-shadow: $--box-shadow-base !default;
 $--message-min-width: 380px !default;
-$--message-background-color: rgba(137, 142, 154, 0.3) !default;
+$--message-background-color: $--pop-background-color !default;
 $--message-padding: 15px 15px 15px 20px !default;
 /// color||Color|0
 $--message-close-icon-color: $--color-info !default;
@@ -410,7 +413,7 @@ $--notification-title-color: $--color-text-primary !default;
 /// color||Color|0
 $--notification-close-color: $--color-text-secondary !default;
 /// color||Color|0
-$--notification-close-hover-color: $--color-text-regular !default;
+$--notification-close-hover-color: $--color-primary !default;
 
 /// color||Color|0
 $--notification-success-icon-color: $--color-success !default;
@@ -436,7 +439,7 @@ $--input-border-color: $--border-color-base !default;
 $--input-border-radius: $--border-radius-base !default;
 $--input-border-color-hover: $--border-color-hover !default;
 /// color||Color|0
-$--input-background-color: $--color-white !default;
+$--input-background-color: $--input-background-color !default;
 $--input-fill-disabled: $--disabled-fill-base !default;
 $--input-color-disabled: $--font-color-disabled-base !default;
 /// color||Color|0
@@ -449,7 +452,7 @@ $--input-hover-border: $--border-color-hover !default;
 $--input-clear-hover-color: $--color-text-secondary !default;
 
 $--input-focus-border: $--color-primary !default;
-$--input-focus-fill: $--color-white !default;
+$--input-focus-fill: $--input-background-color !default;
 
 $--input-disabled-fill: $--disabled-fill-base !default;
 $--input-disabled-border: $--disabled-border-base !default;
@@ -475,12 +478,12 @@ $--input-mini-height: 28px !default;
 $--cascader-menu-font-color: $--color-text-regular !default;
 /// color||Color|0
 $--cascader-menu-selected-font-color: $--color-primary !default;
-$--cascader-menu-fill: $--fill-base !default;
+$--cascader-menu-fill: $--background-color-base !default;
 $--cascader-menu-font-size: $--font-size-base !default;
 $--cascader-menu-radius: $--border-radius-base !default;
 $--cascader-menu-border: solid 1px $--border-color-light !default;
 $--cascader-menu-shadow: $--box-shadow-light !default;
-$--cascader-node-background-hover: $--background-color-base !default;
+$--cascader-node-background-hover: $--hover-background-color !default;
 $--cascader-node-color-disabled:$--color-text-placeholder !default;
 $--cascader-color-empty:$--color-text-placeholder !default;
 $--cascader-tag-background: #f0f2f5;
@@ -547,45 +550,45 @@ $--button-mini-padding-horizontal: 15px !default;
 /// color||Color|0
 $--button-default-font-color: $--color-text-regular !default;
 /// color||Color|0
-$--button-default-background-color: $--color-white !default;
+$--button-default-background-color: $--input-background-color !default;
 /// color||Color|0
 $--button-default-border-color: $--border-color-base !default;
 
 /// color||Color|0
 $--button-disabled-font-color: $--color-text-placeholder !default;
 /// color||Color|0
-$--button-disabled-background-color: $--color-white !default;
+$--button-disabled-background-color: $--disabled-fill-base !default;
 /// color||Color|0
 $--button-disabled-border-color: $--border-color-light !default;
 
 /// color||Color|0
 $--button-primary-border-color: $--color-primary !default;
 /// color||Color|0
-$--button-primary-font-color: $--color-text-primary !default;
+$--button-primary-font-color: $--color-white !default;
 /// color||Color|0
 $--button-primary-background-color: $--color-primary !default;
 /// color||Color|0
 $--button-success-border-color: $--color-success !default;
 /// color||Color|0
-$--button-success-font-color: $--color-text-primary !default;
+$--button-success-font-color: $--color-white !default;
 /// color||Color|0
 $--button-success-background-color: $--color-success !default;
 /// color||Color|0
 $--button-warning-border-color: $--color-warning !default;
 /// color||Color|0
-$--button-warning-font-color: $--color-text-primary !default;
+$--button-warning-font-color: $--color-white !default;
 /// color||Color|0
 $--button-warning-background-color: $--color-warning !default;
 /// color||Color|0
 $--button-danger-border-color: $--color-danger !default;
 /// color||Color|0
-$--button-danger-font-color: $--color-text-primary !default;
+$--button-danger-font-color: $--color-white !default;
 /// color||Color|0
 $--button-danger-background-color: $--color-danger !default;
 /// color||Color|0
 $--button-info-border-color: $--color-info !default;
 /// color||Color|0
-$--button-info-font-color: $--color-text-primary !default;
+$--button-info-font-color: $--color-white !default;
 /// color||Color|0
 $--button-info-background-color: $--color-info !default;
 
@@ -614,7 +617,7 @@ $--switch-button-size: 16px !default;
 
 /* Dialog
 -------------------------- */
-$--dialog-background-color: $--color-white !default;
+$--dialog-background-color: $--pop-background-color !default;
 $--dialog-box-shadow: 0 1px 3px rgba(6, 73, 92, 0.12) !default;
 /// fontSize||Font|1
 $--dialog-title-font-size: $--font-size-large !default;
@@ -635,10 +638,10 @@ $--table-font-color: $--color-text-regular !default;
 /// color||Color|0
 $--table-header-font-color: $--color-text-secondary !default;
 /// color||Color|0
-$--table-row-hover-background-color: $--background-color-base !default;
-$--table-current-row-background-color: $--color-primary-light-9 !default;
+$--table-row-hover-background-color: $--hover-background-color !default;
+$--table-current-row-background-color: $--hover-background-color !default;
 /// color||Color|0
-$--table-header-background-color: $--color-white !default;
+$--table-header-background-color: mix($--disabled-fill-base, $--background-color-base, 50) !default;
 $--table-fixed-box-shadow: 0 0 10px rgba(6, 73, 92, 0.12) !default;
 
 /* Pagination
@@ -646,7 +649,7 @@ $--table-fixed-box-shadow: 0 0 10px rgba(6, 73, 92, 0.12) !default;
 /// fontSize||Font|1
 $--pagination-font-size: 13px !default;
 /// color||Color|0
-$--pagination-background-color: $--color-white !default;
+$--pagination-background-color: $--background-color-base !default;
 /// color||Color|0
 $--pagination-font-color: $--color-text-primary !default;
 $--pagination-border-radius: 3px !default;
@@ -659,7 +662,7 @@ $--pagination-button-height: 28px !default;
 /// color||Color|0
 $--pagination-button-disabled-color: $--color-text-placeholder !default;
 /// color||Color|0
-$--pagination-button-disabled-background-color: $--color-white !default;
+$--pagination-button-disabled-background-color: $--disabled-fill-base !default;
 /// color||Color|0
 $--pagination-hover-color: $--color-primary !default;
 
@@ -673,7 +676,7 @@ $--popup-modal-opacity: 0.5 !default;
 /* Popover
 -------------------------- */
 /// color||Color|0
-$--popover-background-color: $--color-white !default;
+$--popover-background-color: $--background-color-base !default;
 /// fontSize||Font|1
 $--popover-font-size: $--font-size-base !default;
 /// color||Color|0
@@ -690,13 +693,13 @@ $--popover-title-font-color: $--color-text-primary !default;
 /* Tooltip
 -------------------------- */
 /// color|1|Color|0
-$--tooltip-fill: $--color-white !default;
+$--tooltip-fill: $--pop-background-color !default;
 /// color|1|Color|0
 $--tooltip-color: $--color-text-primary !default;
 /// fontSize||Font|1
 $--tooltip-font-size: 12px !default;
 /// color||Color|0
-$--tooltip-border-color: $--color-white !default;
+$--tooltip-border-color: $--tooltip-fill !default;
 $--tooltip-arrow-size: 6px !default;
 /// padding||Spacing|3
 $--tooltip-padding: 10px !default;
@@ -721,7 +724,7 @@ $--tag-padding: 0 10px !default;
 /* Tree
 -------------------------- */
 /// color||Color|0
-$--tree-node-hover-background-color: $--background-color-base !default;
+$--tree-node-hover-background-color: $--hover-background-color !default;
 /// color||Color|0
 $--tree-font-color: $--color-text-regular !default;
 /// color||Color|0
@@ -730,7 +733,7 @@ $--tree-expand-icon-color: $--color-text-placeholder !default;
 /* Dropdown
 -------------------------- */
 $--dropdown-menu-box-shadow: $--box-shadow-light !default;
-$--dropdown-menuItem-hover-fill: $--color-primary-light-9 !default;
+$--dropdown-menuItem-hover-fill: $--hover-background-color !default;
 $--dropdown-menuItem-hover-color: $--link-hover-color !default;
 
 /* Badge
@@ -758,9 +761,9 @@ $--card-padding: 20px !default;
 /// color||Color|0
 $--slider-main-background-color: $--color-primary !default;
 /// color||Color|0
-$--slider-runway-background-color: $--border-color-light !default;
+$--slider-runway-background-color: $--border-color-lighter !default;
 $--slider-button-hover-color: mix($--color-primary, black, 97%) !default;
-$--slider-stop-background-color: $--color-white !default;
+$--slider-stop-background-color: $--input-background-color !default;
 $--slider-disable-color: $--color-text-placeholder !default;
 $--slider-margin: 16px 0 !default;
 $--slider-border-radius: 3px !default;
@@ -784,8 +787,8 @@ $--menu-item-font-size: $--font-size-base !default;
 /// color||Color|0
 $--menu-item-font-color: $--color-text-regular !default;
 /// color||Color|0
-$--menu-background-color: $--color-white !default;
-$--menu-item-hover-fill: $--color-primary-light-9 !default;
+$--menu-background-color: $--background-color-base !default;
+$--menu-item-hover-fill: $--hover-background-color !default;
 
 /* Rate
 -------------------------- */
@@ -807,16 +810,16 @@ $--datepicker-off-font-color: $--color-text-placeholder !default;
 $--datepicker-header-font-color: $--color-text-regular !default;
 $--datepicker-icon-color: $--color-text-primary !default;
 $--datepicker-border-color: $--disabled-border-base !default;
-$--datepicker-inner-border-color: #e4e4e4 !default;
+$--datepicker-inner-border-color: $--border-color-extra-light !default;
 /// color||Color|0
-$--datepicker-inrange-background-color: $--border-color-extra-light !default;
+$--datepicker-inrange-background-color: $--hover-background-color !default;
 /// color||Color|0
-$--datepicker-inrange-hover-background-color: $--border-color-extra-light !default;
+$--datepicker-inrange-hover-background-color: $--hover-background-color !default;
 /// color||Color|0
 $--datepicker-active-color: $--color-primary !default;
 /// color||Color|0
 $--datepicker-hover-font-color: $--color-primary !default;
-$--datepicker-cell-hover-color: rgba(255, 255, 255, 0) !default;
+$--datepicker-cell-hover-color: $--hover-background-color !default;
 
 /* Loading
 -------------------------- */
@@ -835,8 +838,8 @@ $--scrollbar-hover-background-color: rgba($--color-text-secondary, 0.5) !default
 /// fontSize||Font|1
 $--carousel-arrow-font-size: 12px !default;
 $--carousel-arrow-size: 36px !default;
-$--carousel-arrow-background: rgba(224, 210, 189, 0.11) !default;
-$--carousel-arrow-hover-background: rgba(224, 210, 189, 0.23) !default;
+$--carousel-arrow-background: $--background-color-base !default;
+$--carousel-arrow-hover-background: $--hover-background-color !default;
 /// width||Other|4
 $--carousel-indicator-width: 30px !default;
 /// height||Other|4
@@ -852,13 +855,13 @@ $--collapse-border-color: $--border-color-light !default;
 /// height||Other|4
 $--collapse-header-height: 48px !default;
 /// color||Color|0
-$--collapse-header-background-color: $--color-white !default;
+$--collapse-header-background-color: $--background-color-base !default;
 /// color||Color|0
 $--collapse-header-font-color: $--color-text-primary !default;
 /// fontSize||Font|1
 $--collapse-header-font-size: 13px !default;
 /// color||Color|0
-$--collapse-content-background-color: $--color-white !default;
+$--collapse-content-background-color: $--pop-background-color !default;
 /// fontSize||Font|1
 $--collapse-content-font-size: 13px !default;
 /// color||Color|0
@@ -904,7 +907,7 @@ $--timeline-node-color: $--border-color-light !default;
 /* Backtop
 -------------------------- */
 /// color||Color|0
-$--backtop-background-color: $--color-white !default;
+$--backtop-background-color: $--background-color-base !default;
 /// color||Color|0
 $--backtop-font-color: $--color-primary !default;
 /// color||Color|0
@@ -917,7 +920,7 @@ $--link-font-size: $--font-size-base !default;
 /// fontWeight||Font|1
 $--link-font-weight: $--font-weight-primary !default;
 /// color||Color|0
-$--link-default-font-color: $--color-text-regular !default;
+$--link-default-font-color: $--color-white !default;
 /// color||Color|0
 $--link-default-active-color: $--color-primary !default;
 /// color||Color|0
@@ -938,7 +941,7 @@ $--link-info-font-color: $--color-info !default;
 /// border||Other|4
 $--calendar-border: $--table-border !default;
 /// color||Other|4
-$--calendar-selected-background-color: #f2f8fe !default;
+$--calendar-selected-background-color: $--hover-background-color !default;
 $--calendar-cell-width: 85px !default;
 
 /* Form
@@ -949,9 +952,9 @@ $--form-label-font-size: $--font-size-base !default;
 /* Avatar
 -------------------------- */
 /// color||Color|0
-$--avatar-font-color: #fff !default;
+$--avatar-font-color: $--color-white !default;
 /// color||Color|0
-$--avatar-background-color: #c0c4cc !default;
+$--avatar-background-color: $--background-color-base !default;
 /// fontSize||Font Size|1
 $--avatar-text-font-size: 14px !default;
 /// fontSize||Font Size|1

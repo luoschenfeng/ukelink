@@ -59,7 +59,7 @@ router.beforeEach(async (to, from, next) => {
         }
       } catch (err) {
 
-        Message.error(err || 'navigation Guards Error')
+        // Message.error(err || 'navigation Guards Error')
         NProgress.done()
         next(`/login?next=${to.fullPath}`)
 

@@ -10,8 +10,13 @@
           <el-form-item label="审批人">
             <el-input
               v-model="formInline.user"
-              placeholder="审批人"
-            />
+              placeholder="请输入内容"
+            >
+              <i
+                slot="prefix"
+                class="el-input__icon el-icon-search"
+              ></i>
+            </el-input>
           </el-form-item>
           <el-form-item label="活动区域">
             <el-select
@@ -28,9 +33,33 @@
           </el-form-item>
           <el-form-item label="审批人">
             <el-input
-              v-model="formInline.user"
-              placeholder="审批人"
-            />
+              v-model="formInline.region"
+              placeholder="请输入内容"
+              class="input-with-select"
+            >
+              <el-select
+                slot="prepend"
+                v-model="formInline.region"
+                placeholder="请选择"
+              >
+                <el-option
+                  label="餐厅名"
+                  value="1"
+                />
+                <el-option
+                  label="订单号"
+                  value="2"
+                />
+                <el-option
+                  label="用户电话"
+                  value="3"
+                />
+              </el-select>
+              <el-button
+                slot="append"
+                icon="el-icon-search"
+              />
+            </el-input>
           </el-form-item>
           <el-form-item label="活动区域">
             <el-select
@@ -153,7 +182,10 @@
       <div class="section-content">
         <div class="content-operate operate">
           <div class="operate-push"></div>
-          <el-button plain>
+          <el-button
+            plain
+            @click="handleAdd"
+          >
             新增
           </el-button>
           <el-button plain>
@@ -210,6 +242,67 @@
         </div>
       </div>
     </div>
+    <el-dialog
+      v-if="dialog.visible"
+      :visible.sync="dialog.visible"
+    >
+      <el-form v-model="form">
+        <el-form-item
+          label="用户名"
+        >
+          <el-input
+            v-model="formInline.region"
+            placeholder="请输入内容"
+            class="input-with-select"
+          >
+            <el-select
+              slot="prepend"
+              v-model="formInline.region"
+              placeholder="请选择"
+            >
+              <el-option
+                label="餐厅名"
+                value="1"
+              />
+              <el-option
+                label="订单号"
+                value="2"
+              />
+              <el-option
+                label="用户电话"
+                value="3"
+              />
+            </el-select>
+            <el-button
+              slot="append"
+              icon="el-icon-search"
+            />
+          </el-input>
+        </el-form-item>
+        <el-form-item
+          label="啦啦啦"
+        >
+          <el-radio
+            v-model="form.lll"
+            label="1"
+          >
+            备选项
+          </el-radio>
+          <el-radio
+            v-model="form.lll"
+            label="2"
+          >
+            备选项
+          </el-radio>
+        </el-form-item>
+        <el-form-item label="性别">
+          <el-select v-modle="form.sex">
+            <el-option value="男" />
+            <el-option value="女" />
+          </el-select>
+        </el-form-item>
+      </el-form>
+    </el-dialog>
   </div>
 </template>
 
@@ -221,6 +314,14 @@ export default {
       formInline: {
         user: '',
         region: '',
+      },
+      form: {
+        userName: '',
+        sex: '',
+        lll: '',
+      },
+      dialog: {
+        visible: false,
       },
       options1: [
         {
@@ -481,7 +582,7 @@ export default {
           value: '7',
         },
       ],
-      tableData: [ 
+      tableData: [
         {
           date: '2016-05-02',
           name: '王小虎',
@@ -501,7 +602,7 @@ export default {
           date: '2016-05-03',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1516 弄',
-        }, 
+        },
       ],
     }
   },
@@ -509,6 +610,9 @@ export default {
     onSubmit() {
 
       // console.log('submit!');
+    },
+    handleAdd() {
+      this.dialog.visible = true
     },
   },
 

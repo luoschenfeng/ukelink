@@ -2,7 +2,7 @@
   <div
     class="header-breadcrumb"
   >
-    <el-breadcrumb separator="/">
+    <!-- <el-breadcrumb separator="/">
       <transition-group
         tag="ul"
         name="list-x"
@@ -14,7 +14,7 @@
           {{ $t(title) }}
         </el-breadcrumb-item>
       </transition-group>
-    </el-breadcrumb>
+    </el-breadcrumb> -->
   </div>
 </template>
 
