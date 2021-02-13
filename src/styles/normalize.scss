@@ -70,6 +70,10 @@ a:active {
   @include genTheme('color', $color-primary);
 }
 
+input {
+  background-color: transparent,;
+}
+
 #nprogress .bar {
   @include genTheme('background-color', $color-primary, true);
 

@@ -700,7 +700,7 @@ $--tooltip-color: $--color-text-primary !default;
 /// fontSize||Font|1
 $--tooltip-font-size: 12px !default;
 /// color||Color|0
-$--tooltip-border-color: $--tooltip-fill !default;
+$--tooltip-border-color: $--border-color-base !default;
 $--tooltip-arrow-size: 6px !default;
 /// padding||Spacing|3
 $--tooltip-padding: 10px !default;

@@ -24,12 +24,12 @@ $--color-black: #000 !default;
 /// color|1|Font Color|2
 $--color-text-primary: #c7b6c1 !default; //change c3cfd8
 /// color|1|Font Color|2
-$--color-text-regular: #aa819d !default; //change
+$--color-text-regular: #a07492 !default; //change
 /// color|1|Font Color|2
 $--color-text-secondary: #884e76 !default; //change
 /// color|1|Font Color|2
 $--color-text-placeholder: #685161 !default; //change
-$--font-color-disabled-base: #473642 !default;
+$--font-color-disabled-base: #5a4955 !default;
 
 /// color|1|Border Color|3
 $--border-color-base: #702d5c !default; //change
@@ -45,7 +45,7 @@ $--border-color-extra-light: #c097b4 !default; //change
 /// color|1|Background Color|4
 $--background-color-base:rgba(60, 15, 37, 0.9) !default;
 $--hover-background-color:rgba(129, 63, 114, 0.4) !default;
-$--pop-background-color:rgba(58, 22, 39, 0.9) !default; // new pop
+$--pop-background-color:rgba(81, 17, 48, 0.9) !default; // new pop
 $--input-background-color: transparent !default;
 // $--input-background-color: rgba(53, 99, 125, 0.5) !default;
 
@@ -700,7 +700,7 @@ $--tooltip-color: $--color-text-primary !default;
 /// fontSize||Font|1
 $--tooltip-font-size: 12px !default;
 /// color||Color|0
-$--tooltip-border-color: $--tooltip-fill !default;
+$--tooltip-border-color: $--border-color-base !default;
 $--tooltip-arrow-size: 6px !default;
 /// padding||Spacing|3
 $--tooltip-padding: 10px !default;
