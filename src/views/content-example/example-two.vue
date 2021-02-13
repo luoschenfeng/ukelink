@@ -602,27 +602,41 @@ export default {
           .data-table__view {
             padding: 1rem 0;
 
-            .el-scrollbar {
-              .table-scrollbar-wrapper.el-scrollbar__wrap {
-                .el-table {
-                  overflow: visible;
-
-                  .el-table__header-wrapper {
-                    overflow: visible;
-                  }
-
-                  .el-table__body-wrapper {
+            @at-root {
+              .el-scrollbar {
+                .table-scrollbar-wrapper.el-scrollbar__wrap {
+                  .el-table {
                     overflow: visible;
 
-                    &:not(.is-scrolling-none) {
-                      cursor: all-scroll;
+                    .el-table__header-wrapper {
+                      overflow: visible;
+                    }
+
+                    .el-table__body-wrapper {
+                      overflow: visible;
+
+                      &:not(.is-scrolling-none) {
+                        cursor: all-scroll;
+
+                        @debug #{& '~ .el-table__header-wrapper'};
+
+                        & ~ .el-table__header-wrapper {
+                          cursor: all-scroll;
+                        }
+                      }
                     }
                   }
                 }
-              }
 
-              &__bar {
-                opacity: 0.2;
+                &__bar {
+                  opacity: 0.4;
+                }
+
+                &:hover {
+                  .el-scrollbar__bar {
+                    opacity: 1;
+                  }
+                }
               }
             }
           }

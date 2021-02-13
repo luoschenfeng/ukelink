@@ -7,8 +7,10 @@ import request from '@/utils/request'
  * @param {object} data.password
  */
 export function login(data) {
-  return Promise.resolve({
-    token: '12345gs',
+  return request({
+    url: 'api/login',
+    data,
+    method: 'post',
   })
 }
 
@@ -26,14 +28,7 @@ export function logout() {
  * @description 获取用户信息，不用传参，用token
  */
 export function getUserInfo() {
-  return Promise.resolve({
-    roles: [
-      1,
-      2,
-      3,
-      4,
-    ],
-    username: 'luoschenfeng',
-    lang: 'zh',
+  return request({
+    url: 'api/userInfo',
   })
 }

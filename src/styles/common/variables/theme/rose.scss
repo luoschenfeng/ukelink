@@ -7,15 +7,14 @@ $color-text-regular: $--color-text-regular !default;
 $color-text-secondary: $--color-text-secondary !default;
 $color-text-placeholder: $--color-text-placeholder !default;
 
-$background-color: rgb(2, 46, 60, 0.7) !default; // app
 $hover-background-color: $--hover-background-color !default;
 $scrollbar-background-color: $--scrollbar-background-color !default;
-$background-color-darker-1: mix(#000, $background-color, 10%) !default;
-$background-color-darker-2: mix(#000, $background-color, 20%) !default;
-$background-color-darker-3: mix(#000, $background-color, 30%) !default;
-$background-color-lighter-1: mix(#fff, $background-color, 10%) !default;
-$background-color-lighter-2: mix(#fff, $background-color, 20%) !default;
-$background-color-lighter-3: mix(#fff, $background-color, 30%) !default;
+$background-color-dark: rgba(mix(#000, $background-color-base, 15%), 0.9) !default;
+$background-color-darker: rgba(mix(#000, $background-color-base, 35%), 0.9) !default;
+$background-color-extra-dark: rgba(mix(#000, $background-color-base, 55%), 0.9) !default;
+$background-color-light: rgba(mix(#fff, $background-color-base, 5%), 0.9) !default;
+$background-color-lighter: rgba(mix(#fff, $background-color-base, 10%), 0.9) !default;
+$background-color-extra-light: rgba(mix(#fff, $background-color-base, 15%), 0.9) !default;
 
 $box-shadow-light: $--box-shadow-light !default;
 $border-base: $--border-base !default;

@@ -2,7 +2,7 @@
 @import '../../common/mixins/utils.scss';
 
 .header {
-  @include genTheme('background', $background-color-darker-1);
+  @include genTheme('background', $background-color-dark);
   @include genTheme('color', $color-text-primary);
   @include vertical-center;
   @include shadow;
@@ -81,7 +81,7 @@
           @at-root {
             .lang-drapdown__item.selected {
               @include genTheme('color', $color-primary);
-              @include genTheme('background', $background-color-base);
+              @include genTheme('background', $hover-background-color);
             }
           }
         }

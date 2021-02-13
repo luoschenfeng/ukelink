@@ -13,20 +13,19 @@ $color-text-secondary: ("blue": blue-theme.$color-text-secondary, "rose": rose-t
 
 $color-text-placeholder: ("blue": blue-theme.$color-text-placeholder, "rose": rose-theme.$color-text-placeholder);
 
-$background-color: ("blue": blue-theme.$background-color, "rose": rose-theme.$background-color);
 $hover-background-color: ("blue": blue-theme.$hover-background-color, "rose": rose-theme.$hover-background-color);
 $scrollbar-background-color: ("blue": blue-theme.$scrollbar-background-color, "rose": rose-theme.$scrollbar-background-color);
-$background-color-darker-1: ("blue": blue-theme.$background-color-darker-1, "rose": rose-theme.$background-color-darker-1);
-$background-color-darker-2: ("blue": blue-theme.$background-color-darker-2, "rose": rose-theme.$background-color-darker-2);
-$background-color-darker-3: ("blue": blue-theme.$background-color-darker-3, "rose": rose-theme.$background-color-darker-3);
+$background-color-base: ("blue": blue-theme.$background-color-base, "rose": rose-theme.$background-color-base,);
 
-$background-color-lighter-1: ("blue": blue-theme.$background-color-lighter-1, "rose": rose-theme.$background-color-lighter-1);
-$background-color-lighter-2: ("blue": blue-theme.$background-color-lighter-2, "rose": rose-theme.$background-color-lighter-2);
-$background-color-lighter-3: ("blue": blue-theme.$background-color-lighter-3, "rose": rose-theme.$background-color-lighter-3);
+$background-color-dark: ("blue": blue-theme.$background-color-dark, "rose": rose-theme.$background-color-dark);
+$background-color-darker: ("blue": blue-theme.$background-color-darker, "rose": rose-theme.$background-color-darker);
+$background-color-extra-dark: ("blue": blue-theme.$background-color-extra-dark, "rose": rose-theme.$background-color-extra-dark);
+
+$background-color-light: ("blue": blue-theme.$background-color-light, "rose": rose-theme.$background-color-light);
+$background-color-lighter: ("blue": blue-theme.$background-color-lighter, "rose": rose-theme.$background-color-lighter);
+$background-color-extra-light: ("blue": blue-theme.$background-color-extra-light, "rose": rose-theme.$background-color-extra-light);
 
 $background-image-app: ("blue": url("~@/assets/theme/images/blue/background-image-app.png"), "rose": url("~@/assets/theme/images/rose/background-image-app.png"));
-
-$background-color-base: ("blue": blue-theme.$background-color-base, "rose": rose-theme.$background-color-base,);
 
 $box-shadow-light: ("blue": blue-theme.$box-shadow-light, "rose": rose-theme.$box-shadow-light,);
 $border-base: ("blue": blue-theme.$border-base, "rose": rose-theme.$border-base,);
