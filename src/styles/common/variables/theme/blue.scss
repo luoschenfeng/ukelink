@@ -8,6 +8,8 @@ $color-text-secondary: $--color-text-secondary !default;
 $color-text-placeholder: $--color-text-placeholder !default;
 
 $background-color: rgb(2, 46, 60, 0.7) !default; // app
+$hover-background-color: $--hover-background-color !default;
+$scrollbar-background-color: $--scrollbar-background-color !default;
 $background-color-darker-1: mix(#000, $background-color, 10%) !default;
 $background-color-darker-2: mix(#000, $background-color, 20%) !default;
 $background-color-darker-3: mix(#000, $background-color, 30%) !default;

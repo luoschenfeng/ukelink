@@ -28,7 +28,8 @@ body {
     Arial,
     sans-serif;
 
-  @include genThemeStyle('color', $color-text-regular);
+  @include genTheme('color', $color-text-regular);
+  @include genTheme('background', $background-color-base);
   @include scroll-bar;
 }
 
@@ -40,8 +41,7 @@ body {
   top: 0;
   left: 0;
 
-  @include genThemeStyle('background-color', $background-color);
-  @include genThemeStyle('background-image', $background-image-app);
+  @include genTheme('background-image', $background-image-app);
 
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,27 +55,23 @@ h5,
 h6,
 strong,
 em {
-  @include genThemeStyle('color', $color-text-primary);
+  @include genTheme('color', $color-text-primary);
 }
 
 a {
   text-decoration: none;
 
-  @include genThemeStyle('color', $color-text-primary);
+  @include genTheme('color', $color-text-primary);
 }
 
 a:hover,
 a:focus,
 a:active {
-  @include genThemeStyle('color', $color-primary);
-}
-
-input {
-  background-color: transparent;
+  @include genTheme('color', $color-primary);
 }
 
 #nprogress .bar {
-  @include genThemeStyle('background-color', $color-primary, true);
+  @include genTheme('background-color', $color-primary, true);
 
   height: 3px;
 }

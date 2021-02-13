@@ -13,7 +13,7 @@
   }
 }
 
-@mixin genThemeStyle($property, $colorObject, $important: false) {
+@mixin genTheme($property, $colorObject, $important: false) {
   @each $theme in $themeList {
     @if $important {
       .#{$theme} & {
@@ -45,20 +45,20 @@
       border-radius: 5px;
       width: 6px;
 
-      @include genThemeStyle('background', $color-primary);
+      @include genTheme('background', $scrollbar-background-color);
     }
 
     &-corner {/* stylelint-disable-line */
-      @include genThemeStyle('background', $background-color-base);
+      @include genTheme('background', $background-color-base);
     }
 
     &-track {/* stylelint-disable-line */
-      @include genThemeStyle('background', $background-color-base);
+      @include genTheme('background', $background-color-base);
 
       &-piece { /* stylelint-disable-line */
         width: 6px;
 
-        @include genThemeStyle('background', $background-color-base);
+        @include genTheme('background', $background-color-base);
       }
     }
   }
@@ -81,8 +81,7 @@
 }
 
 @mixin shadow {
-  @include genThemeStyle('box-shadow', $box-shadow-light);
-  @include genThemeStyle('border', $border-base);
+  @include genTheme('box-shadow', $box-shadow-light);
 }
 
 @mixin hasEvent {

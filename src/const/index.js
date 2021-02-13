@@ -18,7 +18,7 @@ export const DEFAULT_AVATAR = '~@/assets/images/avatar.svg'
  */
 export const LANG_LIST = [
   'zh',
-  'en', 
+  'en',
 ]
 
 /**
@@ -32,14 +32,17 @@ export const DEFAULT_LANG = 'zh'
  * @type {array}
  * @description  themeList
  */
-export const THEME_LIST = [ 'blue' ]
+export const THEME_LIST = [
+  'blue',
+  'rose',
+]
 
 /**
  * @type {string}
  * @default blue
  * @description  default theme
  */
-export const DEFAULT_THEME = 'blue'
+export const DEFAULT_THEME = 'rose'
 
 
 export const argsTag = '[object Arguments]'

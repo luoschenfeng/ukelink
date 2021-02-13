@@ -1,4 +1,7 @@
 
+@import "./common/variables/index.scss";
+@import '~normalize.css/normalize.css';
+
 .el-form-item__label {
   font-weight: bold;
 }

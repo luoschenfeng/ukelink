@@ -2,8 +2,8 @@
 @import '../../common/mixins/utils.scss';
 
 .header {
-  @include genThemeStyle('background', $background-color-darker-1);
-  @include genThemeStyle('color', $color-text-primary);
+  @include genTheme('background', $background-color-darker-1);
+  @include genTheme('color', $color-text-primary);
   @include vertical-center;
   @include shadow;
 
@@ -80,8 +80,8 @@
         &.lang::v-deep {
           @at-root {
             .lang-drapdown__item.selected {
-              @include genThemeStyle('color', $color-primary);
-              @include genThemeStyle('background', $background-color-base);
+              @include genTheme('color', $color-primary);
+              @include genTheme('background', $background-color-base);
             }
           }
         }

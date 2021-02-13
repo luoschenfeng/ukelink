@@ -133,7 +133,6 @@ export default {
     height: 100%;
     text-align: center;
 
-    @include genThemeStyle('background', $background-color-base);
     @include vertical-center;
 
     .login-form {

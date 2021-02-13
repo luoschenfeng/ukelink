@@ -29,9 +29,10 @@ $--color-text-regular: #a5b7c5 !default; //change
 $--color-text-secondary: #8f9fad !default; //change
 /// color|1|Font Color|2
 $--color-text-placeholder: #667a80 !default; //change
+$--font-color-disabled-base: #545f63 !default;
 
 /// color|1|Border Color|3
-$--border-color-base: #60788a !default; //change
+$--border-color-base: #6f7e8b !default; //change
 /// color|1|Border Color|3
 $--border-color-light: #93a9b8 !default; //change
 /// color|1|Border Color|3
@@ -45,7 +46,8 @@ $--border-color-extra-light: #d8dfe7 !default; //change
 $--background-color-base:rgba(10, 60, 78, 0.9) !default;
 $--hover-background-color:rgba(105, 126, 141, 0.4) !default;
 $--pop-background-color:rgba(6, 73, 92, 0.9) !default; // new pop
-$--input-background-color: rgba(53, 99, 125, 0.5) !default;
+$--input-background-color: transparent !default;
+// $--input-background-color: rgba(53, 99, 125, 0.5) !default;
 
 /* Disable base
 -------------------------- */
@@ -136,7 +138,6 @@ $--font-weight-secondary: 100 !default;
 $--font-line-height-primary: 24px !default;
 /// fontLineHeight|1|Line Height|2
 $--font-line-height-secondary: 16px !default;
-$--font-color-disabled-base: #bbb !default;
 
 /* Size
 -------------------------- */
@@ -311,7 +312,7 @@ $--select-group-font-size: 12px !default;
 
 $--select-dropdown-background: $--pop-background-color !default;
 $--select-dropdown-shadow: $--box-shadow-light !default;
-$--select-dropdown-empty-color: #999 !default;
+$--select-dropdown-empty-color: $--color-text-placeholder !default;
 /// height||Other|4
 $--select-dropdown-max-height: 274px !default;
 $--select-dropdown-padding: 6px 0 !default;
@@ -486,7 +487,7 @@ $--cascader-menu-shadow: $--box-shadow-light !default;
 $--cascader-node-background-hover: $--hover-background-color !default;
 $--cascader-node-color-disabled:$--color-text-placeholder !default;
 $--cascader-color-empty:$--color-text-placeholder !default;
-$--cascader-tag-background: #f0f2f5;
+$--cascader-tag-background: $--background-color-base;
 
 /* Group
 -------------------------- */
@@ -618,7 +619,7 @@ $--switch-button-size: 16px !default;
 /* Dialog
 -------------------------- */
 $--dialog-background-color: $--pop-background-color !default;
-$--dialog-box-shadow: 0 1px 3px rgba(6, 73, 92, 0.12) !default;
+$--dialog-box-shadow: $--box-shadow-base !default;
 /// fontSize||Font|1
 $--dialog-title-font-size: $--font-size-large !default;
 /// fontSize||Font|1
@@ -641,8 +642,8 @@ $--table-header-font-color: $--color-text-secondary !default;
 $--table-row-hover-background-color: $--hover-background-color !default;
 $--table-current-row-background-color: $--hover-background-color !default;
 /// color||Color|0
-$--table-header-background-color: mix($--disabled-fill-base, $--background-color-base, 50) !default;
-$--table-fixed-box-shadow: 0 0 10px rgba(6, 73, 92, 0.12) !default;
+$--table-header-background-color: mix($--disabled-fill-base, $--background-color-base, 80) !default;
+$--table-fixed-box-shadow: $--box-shadow-base !default;
 
 /* Pagination
 -------------------------- */
@@ -830,8 +831,8 @@ $--loading-fullscreen-spinner-size: 50px !default;
 
 /* Scrollbar
 -------------------------- */
-$--scrollbar-background-color: rgba($--color-text-secondary, 0.3) !default;
-$--scrollbar-hover-background-color: rgba($--color-text-secondary, 0.5) !default;
+$--scrollbar-background-color: mix($--color-white, $--hover-background-color, 50%) !default;
+$--scrollbar-hover-background-color: mix($--color-white, $--hover-background-color, 70%);
 
 /* Carousel
 -------------------------- */

@@ -40,10 +40,18 @@
 // Vue.use(Badge)
 // Vue.prototype.$message = Message
 
-import '@/assets/theme/style/blue/index.css';
+// import '@/assets/theme/style/blue/index.css';
 import Vue from 'vue';
 import ElementUI from 'element-ui';
 import i18n from '@/lang/i18n'
+import {
+  DEFAULT_THEME,
+} from '@/const'
+if (DEFAULT_THEME === 'rose') {
+  require(`@/assets/theme/style/rose/index.css`)
+}  else {
+  require(`@/assets/theme/style/blue/index.css`)
+}
 Vue.use(ElementUI, {
   i18n: (key, value) => i18n.t(key, value),
 });

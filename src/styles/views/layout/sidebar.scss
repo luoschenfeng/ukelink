@@ -4,39 +4,39 @@
 @mixin menu-theme {
   .el-submenu__title {
     &:focus {
-      @include genThemeStyle('background-color', $background-color-darker-1);
+      @include genTheme('background-color', $background-color-darker-1);
     }
 
     &:hover {
-      @include genThemeStyle('background-color', $background-color);
+      @include genTheme('background-color', $background-color);
     }
   }
 
   .el-menu-item {
     &:focus {
-      @include genThemeStyle('background-color', $background-color-darker-1);
+      @include genTheme('background-color', $background-color-darker-1);
     }
 
     &:hover {
-      @include genThemeStyle('background-color', $background-color);
+      @include genTheme('background-color', $background-color);
     }
   }
 }
 
 @mixin submenu-theme {
   .el-submenu__title {
-    @include genThemeStyle('background-color', $background-color-lighter-1);
+    @include genTheme('background-color', $background-color-lighter-1);
 
     &:hover {
-      @include genThemeStyle('background-color', $background-color-lighter-2);
+      @include genTheme('background-color', $background-color-lighter-2);
     }
   }
 
   .el-menu-item {
-    @include genThemeStyle('background-color', $background-color-lighter-1);
+    @include genTheme('background-color', $background-color-lighter-1);
 
     &:hover {
-      @include genThemeStyle('background-color', $background-color-lighter-2);
+      @include genTheme('background-color', $background-color-lighter-2);
     }
   }
 }
@@ -64,7 +64,7 @@
             padding-right: 0.5rem;
           }
 
-          @include genThemeStyle('background-color', $background-color-darker-1);
+          @include genTheme('background-color', $background-color-darker-1);
           @include menu-theme;
 
           .menu-item_link {

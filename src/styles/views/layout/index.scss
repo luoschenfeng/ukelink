@@ -38,8 +38,8 @@
         margin-left: $sidebar-width-max;
         transition: margin 0.24s;
 
-        @include genThemeStyle('box-shadow', $box-shadow-light);
-        @include genThemeStyle('border', $border-base);
+        @include genTheme('box-shadow', $box-shadow-light);
+        @include genTheme('border', $border-base);
 
         &.main__resize {
           margin-left: $sidebar-width-min;

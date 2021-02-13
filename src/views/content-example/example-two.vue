@@ -93,82 +93,6 @@
               />
             </el-select>
           </el-form-item>
-          <el-form-item label="审批人">
-            <el-input
-              v-model="formInline.user"
-              placeholder="审批人"
-            />
-          </el-form-item>
-          <el-form-item label="活动区域">
-            <el-select
-              v-model="formInline.region"
-              placeholder="活动区域"
-            >
-              <el-option
-                v-for="option of options4"
-                :key="option.key"
-                :label="option.label"
-                :value="option.value"
-              />
-            </el-select>
-          </el-form-item>
-          <el-form-item label="审批人">
-            <el-input
-              v-model="formInline.user"
-              placeholder="审批人"
-            />
-          </el-form-item>
-          <el-form-item label="活动区域">
-            <el-select
-              v-model="formInline.region"
-              placeholder="活动区域"
-            >
-              <el-option
-                v-for="option of options5"
-                :key="option.key"
-                :label="option.label"
-                :value="option.value"
-              />
-            </el-select>
-          </el-form-item>
-          <el-form-item label="审批人">
-            <el-input
-              v-model="formInline.user"
-              placeholder="审批人"
-            />
-          </el-form-item>
-          <el-form-item label="活动区域">
-            <el-select
-              v-model="formInline.region"
-              placeholder="活动区域"
-            >
-              <el-option
-                v-for="option of options6"
-                :key="option.key"
-                :label="option.label"
-                :value="option.value"
-              />
-            </el-select>
-          </el-form-item>
-          <el-form-item label="审批人">
-            <el-input
-              v-model="formInline.user"
-              placeholder="审批人"
-            />
-          </el-form-item>
-          <el-form-item label="活动区域">
-            <el-select
-              v-model="formInline.region"
-              placeholder="活动区域"
-            >
-              <el-option
-                v-for="option of options7"
-                :key="option.key"
-                :label="option.label"
-                :value="option.value"
-              />
-            </el-select>
-          </el-form-item>
           <el-form-item>
             <el-button
               type="primary"
@@ -210,25 +134,33 @@
           <div class="data-wrapper">
             <div class="data-table">
               <div class="data-table__view">
-                <el-table
-                  :data="tableData"
-                  style="width: 100%;"
-                >
-                  <el-table-column
-                    prop="date"
-                    label="日期"
-                    width="180"
-                  />
-                  <el-table-column
-                    prop="name"
-                    label="姓名"
-                    width="180"
-                  />
-                  <el-table-column
-                    prop="address"
-                    label="地址"
-                  />
-                </el-table>
+                <el-scrollbar wrap-class="table-scrollbar-wrapper">
+                  <el-table
+                    :data="tableData"
+                    style="width: 100%;"
+                  >
+                    <el-table-column
+                      prop="date"
+                      label="日期"
+                      width="180"
+                    />
+                    <el-table-column
+                      prop="name"
+                      label="姓名"
+                      width="180"
+                    />
+                    <el-table-column
+                      prop="address"
+                      label="地址"
+                      width="300"
+                    />
+                    <el-table-column
+                      prop="sex"
+                      label="性别"
+                      width="300"
+                    />
+                  </el-table>
+                </el-scrollbar>
               </div>
               <div class="data-table__pagination">
                 <el-pagination
@@ -587,23 +519,41 @@ export default {
           date: '2016-05-02',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1518 弄',
+          sex: '男',
         },
         {
           date: '2016-05-04',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1517 弄',
+          sex: '男',
         },
         {
           date: '2016-05-01',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1519 弄',
+          sex: '男',
         },
         {
           date: '2016-05-03',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1516 弄',
+          sex: '男',
         },
       ],
+    }
+  },
+  mounted() {
+    const tableWrapper = document.querySelector('.data-table__view .el-table__body-wrapper')
+
+    const tableWrapperClass = tableWrapper.className
+
+    if (/is-scrolling-(\w+)/.test(tableWrapperClass)) {
+      console.log(RegExp['$1'])
+      switch (RegExp.$1) {
+      case 'left' :
+        console.log(1)
+        break
+      }
     }
   },
   methods: {
@@ -651,6 +601,30 @@ export default {
         .data-table {
           .data-table__view {
             padding: 1rem 0;
+
+            .el-scrollbar {
+              .table-scrollbar-wrapper.el-scrollbar__wrap {
+                .el-table {
+                  overflow: visible;
+
+                  .el-table__header-wrapper {
+                    overflow: visible;
+                  }
+
+                  .el-table__body-wrapper {
+                    overflow: visible;
+
+                    &:not(.is-scrolling-none) {
+                      cursor: all-scroll;
+                    }
+                  }
+                }
+              }
+
+              &__bar {
+                opacity: 0.2;
+              }
+            }
           }
 
           .data-table__pagination {

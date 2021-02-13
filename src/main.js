@@ -3,13 +3,13 @@ import App from '@/App.vue'
 import store from '@/store'
 import i18n from '@/lang/i18n'
 
-import '@/styles/index.scss';
 
 import router from '@/router'
 import '@/router/navigationGuards'
 
 // setup element-ui
 import '@/element-ui'
+import '@/styles/index.scss';
 import '@/icons'
 Vue.config.productionTip = false;
 
