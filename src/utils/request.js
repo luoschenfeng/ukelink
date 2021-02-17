@@ -19,7 +19,7 @@ import {
 
 // 创建实例时设置配置的默认值
 let instance = axios.create({
-  baseURL: process.env.VUE_APP_MOCK_URL,
+  baseURL: 'https://luoschenfeng.com:5000/mock/5f13002872833e605442f079',
   timeout: 10000,
 });
 

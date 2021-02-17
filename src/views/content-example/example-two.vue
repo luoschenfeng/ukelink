@@ -147,7 +147,6 @@
                     <el-table-column
                       prop="name"
                       label="姓名"
-                      width="180"
                     />
                     <el-table-column
                       prop="address"
@@ -599,10 +598,10 @@ export default {
     .content-data {
       .data-wrapper {
         .data-table {
-          .data-table__view {
-            padding: 1rem 0;
+          @at-root {
+            .data-table__view {
+              padding: 1rem 0;
 
-            @at-root {
               .el-scrollbar {
                 .table-scrollbar-wrapper.el-scrollbar__wrap {
                   .el-table {
@@ -618,8 +617,6 @@ export default {
                       &:not(.is-scrolling-none) {
                         cursor: all-scroll;
 
-                        @debug #{& '~ .el-table__header-wrapper'};
-
                         & ~ .el-table__header-wrapper {
                           cursor: all-scroll;
                         }
@@ -630,12 +627,6 @@ export default {
 
                 &__bar {
                   opacity: 0.4;
-                }
-
-                &:hover {
-                  .el-scrollbar__bar {
-                    opacity: 1;
-                  }
                 }
               }
             }
